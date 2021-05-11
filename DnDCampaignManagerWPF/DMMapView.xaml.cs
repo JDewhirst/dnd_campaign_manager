@@ -22,6 +22,24 @@ namespace DnDCampaignManagerWPF
         public DMMapView()
         {
             InitializeComponent();
+            int count = 1;
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    Button MyControl = new Button();
+                    MyControl.Content = count.ToString();
+                    MyControl.Name = "MapButton" + count.ToString();
+
+                    Grid.SetColumn(MyControl, j);
+                    Grid.SetRow(MyControl, i);
+                    gridMap.SetValue(Grid.RowProperty, j);
+                    gridMap.Children.Add(MyControl);
+                    count++;
+
+                }
+                gridMain.SetValue(Grid.ColumnProperty, i);
+            }
         }
     }
 }

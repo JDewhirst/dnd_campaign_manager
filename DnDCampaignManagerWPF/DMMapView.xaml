@@ -6,8 +6,45 @@
         xmlns:local="clr-namespace:DnDCampaignManagerWPF"
         mc:Ignorable="d"
         Title="DMMapView" Height="450" Width="800">
-    <Grid>
-        <TextBox HorizontalAlignment="Center" Text="This is a test" FontSize="50" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+    <Grid Name="gridMain" ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Name="gridMap" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+            
+        </Grid>
+
+        <TextBox Name="ProvinceName" Grid.Column="2">Some Text</TextBox>
 
     </Grid>
+        
+
 </Window>
