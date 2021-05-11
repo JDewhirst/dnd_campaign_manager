@@ -17,7 +17,7 @@ The goals for this sprint were to create an entity relationship diagram for the 
 
 ### Pre-Sprint Project Board
 
-![](\readme_images\Sprint 1 - Project Manager Pre-Sprint.png)
+![](/readme_images/Sprint 1 - Project Manager Pre-Sprint.png)
 
 ### Database Entity Relationship Diagram
 
