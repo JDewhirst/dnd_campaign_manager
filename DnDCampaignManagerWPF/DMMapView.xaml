@@ -20,11 +20,6 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -32,18 +27,9 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-
-            
+            </Grid.ColumnDefinitions>
         </Grid>
-
-        <TextBox Name="ProvinceName" Grid.Column="2">Some Text</TextBox>
-
+        <TextBox x:Name="ProvinceInformation" Text="Test" Grid.Column="2" Grid.ColumnSpan="1" TextWrapping="Wrap"/>
     </Grid>
         
 

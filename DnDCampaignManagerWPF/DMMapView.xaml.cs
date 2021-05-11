@@ -23,13 +23,14 @@ namespace DnDCampaignManagerWPF
         {
             InitializeComponent();
             int count = 1;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < 5; j++)
                 {
                     Button MyControl = new Button();
                     MyControl.Content = count.ToString();
                     MyControl.Name = "MapButton" + count.ToString();
+                    MyControl.Click += new RoutedEventHandler(MapButtonClick);
 
                     Grid.SetColumn(MyControl, j);
                     Grid.SetRow(MyControl, i);
@@ -40,6 +41,14 @@ namespace DnDCampaignManagerWPF
                 }
                 gridMain.SetValue(Grid.ColumnProperty, i);
             }
+        }
+
+
+
+        protected void MapButtonClick(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            ProvinceInformation.Text = button.Name;
         }
     }
 }
