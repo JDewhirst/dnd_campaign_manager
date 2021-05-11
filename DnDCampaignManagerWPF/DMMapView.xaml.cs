@@ -22,6 +22,8 @@ namespace DnDCampaignManagerWPF
         public DMMapView()
         {
             InitializeComponent();
+
+            // Generate map buttons
             int count = 1;
             for (int i = 0; i < 5; i++)
             {
@@ -31,6 +33,11 @@ namespace DnDCampaignManagerWPF
                     MyControl.Content = count.ToString();
                     MyControl.Name = "MapButton" + count.ToString();
                     MyControl.Click += new RoutedEventHandler(MapButtonClick);
+
+                    // Add image to button
+                    Image img = new Image() { Source = new BitmapImage(new Uri(@"C:\Users\jackd\Documents\Sparta_Global\C#SDET\three_tier_project\dnd_campaign_manager\DnDCampaignManagerWPF\Images\Forest.bmp")) };
+                    img.Stretch = Stretch.Fill;
+                    MyControl.Content = img;
 
                     Grid.SetColumn(MyControl, j);
                     Grid.SetRow(MyControl, i);
