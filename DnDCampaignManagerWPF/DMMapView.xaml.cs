@@ -22,7 +22,11 @@ namespace DnDCampaignManagerWPF
         public DMMapView()
         {
             InitializeComponent();
+            GenerateMapButtons();
+        }
 
+        private void GenerateMapButtons()
+        {
             // Generate map buttons
             int count = 1;
             for (int i = 0; i < 5; i++)
@@ -30,12 +34,20 @@ namespace DnDCampaignManagerWPF
                 for (int j = 0; j < 5; j++)
                 {
                     Button MyControl = new Button();
-                    MyControl.Content = count.ToString();
+                    
                     MyControl.Name = "MapButton" + count.ToString();
                     MyControl.Click += new RoutedEventHandler(MapButtonClick);
 
                     // Add image to button
-                    Image img = new Image() { Source = new BitmapImage(new Uri(@"C:\Users\jackd\Documents\Sparta_Global\C#SDET\three_tier_project\dnd_campaign_manager\DnDCampaignManagerWPF\Images\Forest.bmp")) };
+                    Image img = new Image();
+                    if (j < 3)
+                    {
+                         img.Source = new BitmapImage(new Uri(@"C:\Users\jackd\Documents\Sparta_Global\C#SDET\three_tier_project\dnd_campaign_manager\DnDCampaignManagerWPF\Images\Forest.bmp"));
+                    }
+                    else
+                    {
+                        img.Source = new BitmapImage(new Uri(@"C:\Users\jackd\Documents\Sparta_Global\C#SDET\three_tier_project\dnd_campaign_manager\DnDCampaignManagerWPF\Images\Plain.bmp"));
+                    }
                     img.Stretch = Stretch.Fill;
                     MyControl.Content = img;
 
@@ -48,14 +60,25 @@ namespace DnDCampaignManagerWPF
                 }
                 gridMain.SetValue(Grid.ColumnProperty, i);
             }
+
         }
 
-
-
-        protected void MapButtonClick(object sender, EventArgs e)
+        private void MapButtonClick(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            ProvinceInformation.Text = button.Name;
+            ProvinceNameBox.Text = button.Name;
+            ProvinceDescriptionBox.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed pulvinar proin gravida hendrerit lectus. Blandit massa enim nec dui nunc mattis enim ut tellus. Tristique senectus et netus et malesuada fames. Lacus viverra vitae congue eu consequat. Viverra vitae congue eu consequat. Enim lobortis scelerisque fermentum dui faucibus. Blandit libero volutpat sed cras ornare. Amet dictum sit amet justo donec enim diam vulputate. Fusce ut placerat orci nulla. Nunc lobortis mattis aliquam faucibus purus. Auctor urna nunc id cursus metus aliquam. Interdum posuere lorem ipsum dolor sit. Odio ut enim blandit volutpat maecenas volutpat.";
+            ProvinceHiddenFeatureBox.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed pulvinar proin gravida hendrerit lectus. Blandit massa enim nec dui nunc mattis enim ut tellus. Tristique senectus et netus et malesuada fames. Lacus viverra vitae congue eu consequat. Viverra vitae congue eu consequat. Enim lobortis scelerisque fermentum dui faucibus. Blandit libero volutpat sed cras ornare. Amet dictum sit amet justo donec enim diam vulputate. Fusce ut placerat orci nulla. Nunc lobortis mattis aliquam faucibus purus. Auctor urna nunc id cursus metus aliquam. Interdum posuere lorem ipsum dolor sit. Odio ut enim blandit volutpat maecenas volutpat.";
+        }
+
+        private void RollRandomEncounter_Button_Click(object sender, RoutedEventArgs e)
+        {
+            RandomEncounterResultBox.Text = "Not yet implemented";
+        }
+
+        private void EditProvinceInformation_Button_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
