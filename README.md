@@ -13,7 +13,8 @@ Using; C#, WPF, SQL, Microsoft Entity Framework
 
 ## Sprint 1  - 11/05/2021
 
-The goals for this sprint were to create an entity relationship diagram for the necessary database and complete user story 1.1 DM Map View
+- [x] Create entity relationship diagram
+- [ ] Complete user story 1.1 DM Map View
 
 ### Pre-Sprint Project Board
 
