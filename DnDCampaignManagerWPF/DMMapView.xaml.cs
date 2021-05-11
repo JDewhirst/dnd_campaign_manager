@@ -10,28 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace DnDCampaignManagerWPF
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DMMapView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DMMapView : Window
     {
-        
-        public MainWindow()
+        public DMMapView()
         {
             InitializeComponent();
-        }
-
-        private void DMMap_Button_click(object sender, RoutedEventArgs e)
-        {
-            // Navigate to DMMapView.xaml   
-            DMMapView dMMapView = new DMMapView();
-            dMMapView.Show();
-            this.Close();
         }
     }
 }

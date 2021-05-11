@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:DnDCampaignManagerWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <DockPanel>
+        <Grid x:Name="Grid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+            <Button Content="DM Map View"  Grid.Row="1" Grid.Column="1" Click="DMMap_Button_click"/>
+        </Grid>
+    </DockPanel>
 
-    </Grid>
 </Window>
