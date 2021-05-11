@@ -3,6 +3,14 @@ Repository for an app that displays a map of a role-playing game world and autom
 
 Using; C#, WPF, SQL, Microsoft Entity Framework
 
+## Definition Of Done
+
+- [ ] All user stories have been reviewed and are done
+- [ ] Readme fully describes app functionality
+- [ ] Readme includes breakdown of every sprint
+- [ ] Cover all CRUD methods with unit tests
+- [ ] Final changes committed to main branch by 9:30 Mon 17ths
+
 ## Sprint 1  - 11/05/2021
 
 The goals for this sprint were to create an entity relationship diagram for the necessary database and complete user story 1.1 DM Map View
