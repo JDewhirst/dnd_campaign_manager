@@ -37,5 +37,5 @@ In the next sprint I will be creating the database and CRUD functions necessary 
 
 ### Post-sprint Project Board
 
-![Sprint 2 - Project Manager Post-Sprint](C:\Users\jackd\Documents\Sparta_Global\C#SDET\three_tier_project\dnd_campaign_manager\readme_images\Sprint 2 - Project Manager Post-Sprint.png)
+![Sprint 2 - Project Manager Post-Sprint](/readme_images/Sprint 2 - Project Manager Post-Sprint.png)
 
