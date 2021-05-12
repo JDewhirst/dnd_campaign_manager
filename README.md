@@ -51,3 +51,4 @@ In the next sprint I will be creating the database and CRUD functions necessary 
 ### Pre-Sprint Project Board
 
 ![](readme_images/sprint2_presprint.png)
+
