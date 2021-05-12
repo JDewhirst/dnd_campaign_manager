@@ -9,14 +9,12 @@ namespace DnDCampaignManagerApp
 {
     public class ProvinceManager
     {
-        public List<string> GetProvinceDescriptions()
+        public Province SelectedProvince { get; set; }
+        private TerrainManager _terrainManager = new TerrainManager();
+
+        public void SetSelectedProvince(object selectedItem)
         {
-            return new List<string>
-            {
-                "GetProvinceDescriptions not implemented",
-                "GetProvinceDescriptions not implemented",
-                "GetProvinceDescriptions not implemented"
-            };
+            SelectedProvince = (Province)selectedItem;
         }
 
         public int GetNumberOfProvinces()
@@ -32,6 +30,35 @@ namespace DnDCampaignManagerApp
             using (var db = new DnDCampaignManagerContext())
             {
                 return db.Provinces.ToList();
+            }
+        }
+
+        public string GetProvinceHiddenFeature(string provinceName)
+        {
+            using (var db = new DnDCampaignManagerContext())
+            {
+                SelectedProvince = db.Provinces.Where(p => p.ProvinceName == provinceName).FirstOrDefault();
+                return SelectedProvince.HiddenFeature;
+            }
+        }
+
+        public string GetProvinceObviousFeature(string provinceName)
+        {
+            using (var db = new DnDCampaignManagerContext())
+            {
+                SelectedProvince = db.Provinces.Where(p => p.ProvinceName == provinceName).FirstOrDefault();
+                return SelectedProvince.ObviousFeature;
+            }
+        }
+
+        public string GetProvinceTravelSpeed(string provinceName)
+        {
+            using (var db = new DnDCampaignManagerContext())
+            {
+                var provinceTerrain = db.Provinces.Where(p => p.ProvinceName == provinceName).FirstOrDefault();
+                var provinceTravelSpeed = db.TerrainDetails.Where(td => td.TerrainId == provinceTerrain.TerrainId)
+                    .FirstOrDefault().TerrainTravelSpeed.ToString();
+                return provinceTravelSpeed;
             }
         }
     }
