@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDCampaignManagerApp", "DnDCampaignManagerApp.csproj", "{CC11E0B2-9386-4803-80D5-F43F9120D4E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DnDCampaignManagerApp", "DnDCampaignManagerApp.csproj", "{CC11E0B2-9386-4803-80D5-F43F9120D4E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDCampaignManagerWPF", "..\DnDCampaignManagerWPF\DnDCampaignManagerWPF.csproj", "{F72ECEFA-72A9-4294-853E-D1F98218CDE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DnDCampaignManagerWPF", "..\DnDCampaignManagerWPF\DnDCampaignManagerWPF.csproj", "{F72ECEFA-72A9-4294-853E-D1F98218CDE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDCampaignManagerTests", "..\DnDCampaignManagerTests\DnDCampaignManagerTests.csproj", "{4913BFF6-A928-459D-85A0-8E79165EBA79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DnDCampaignManagerTests", "..\DnDCampaignManagerTests\DnDCampaignManagerTests.csproj", "{4913BFF6-A928-459D-85A0-8E79165EBA79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampaignManagerData", "..\CampaignManagerData\CampaignManagerData.csproj", "{127A8CAE-FA94-49F7-A2B4-A0288CE5D9B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{4913BFF6-A928-459D-85A0-8E79165EBA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4913BFF6-A928-459D-85A0-8E79165EBA79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4913BFF6-A928-459D-85A0-8E79165EBA79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{127A8CAE-FA94-49F7-A2B4-A0288CE5D9B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{127A8CAE-FA94-49F7-A2B4-A0288CE5D9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{127A8CAE-FA94-49F7-A2B4-A0288CE5D9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{127A8CAE-FA94-49F7-A2B4-A0288CE5D9B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

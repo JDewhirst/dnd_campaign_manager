@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DnDCampaignManagerApp\DnDCampaignManagerApp.csproj" />
+    <Folder Include="Images\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <ProjectReference Include="..\DnDCampaignManagerApp\DnDCampaignManagerApp.csproj" />
   </ItemGroup>
 
 </Project>

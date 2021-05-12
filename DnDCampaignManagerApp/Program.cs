@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using CampaignManagerData;
 
 namespace DnDCampaignManagerApp
 {
@@ -6,7 +8,9 @@ namespace DnDCampaignManagerApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
         }
+
+
     }
 }
