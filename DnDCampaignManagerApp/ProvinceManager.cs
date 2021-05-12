@@ -61,5 +61,25 @@ namespace DnDCampaignManagerApp
                 return provinceTravelSpeed;
             }
         }
+
+        public void UpdateObviousFeatureDescription(string provinceName, string featureText)
+        {
+            using (var db = new DnDCampaignManagerContext())
+            {
+                SelectedProvince = db.Provinces.Where(p => p.ProvinceName == provinceName).FirstOrDefault();
+                SelectedProvince.ObviousFeature = featureText;
+                db.SaveChanges();
+            }
+        }
+
+        public void UpdateHiddenFeatureDescription(string provinceName, string featureText)
+        {
+            using (var db = new DnDCampaignManagerContext())
+            {
+                SelectedProvince = db.Provinces.Where(p => p.ProvinceName == provinceName).FirstOrDefault();
+                SelectedProvince.HiddenFeature = featureText;
+                db.SaveChanges();
+            }
+        }
     }
 }

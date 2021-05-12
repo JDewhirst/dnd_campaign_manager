@@ -99,7 +99,19 @@ namespace DnDCampaignManagerWPF
 
         private void EditProvinceInformation_Button_Click(object sender, RoutedEventArgs e)
         {
+            ProvinceDescriptionBox.IsEnabled = true;
+            ProvinceHiddenFeatureBox.IsEnabled = true;
+            EditProvinceInformation_Button.IsEnabled = false;
+            SaveProvinceInformation_Button.IsEnabled = true;
             
+        }
+
+        private void SaveProvinceInformation_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _provinceManager.UpdateObviousFeatureDescription(ProvinceNameBox.Text, ProvinceDescriptionBox.Text);
+            _provinceManager.UpdateHiddenFeatureDescription(ProvinceNameBox.Text, ProvinceHiddenFeatureBox.Text);
+            EditProvinceInformation_Button.IsEnabled = true;
+            SaveProvinceInformation_Button.IsEnabled = false;
         }
     }
 }

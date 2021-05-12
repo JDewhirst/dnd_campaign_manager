@@ -33,5 +33,20 @@ namespace DnDCampaignManagerApp
                 return SelectedTerrain.TerrainTravelSpeed.ToString();
             }
         }
+
+        public void CreateTerrain(string terrainId, string terrainDescription, int travelSpeed)
+        {
+            TerrainDetail newTerrain = new TerrainDetail
+            {
+                TerrainId = terrainId,
+                TerrainDescription = terrainDescription,
+                TerrainTravelSpeed = travelSpeed
+            };
+            using (var db = new DnDCampaignManagerContext())
+            {
+                db.TerrainDetails.Add(newTerrain);
+                db.SaveChanges();
+            }
+        }
     }
 }

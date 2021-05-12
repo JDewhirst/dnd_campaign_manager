@@ -42,7 +42,9 @@
             
             <Button x:Name="RollRandomEncounter_Button" Content="Roll Random Encounter" Click="RollRandomEncounter_Button_Click"></Button>
             <TextBox x:Name="RandomEncounterResultBox" Text="" IsEnabled="False"></TextBox>
+            
             <Button x:Name="EditProvinceInformation_Button" Content="Edit" Click="EditProvinceInformation_Button_Click"></Button>
+            <Button x:Name="SaveProvinceInformation_Button" Content="Save" Click="SaveProvinceInformation_Button_Click" IsEnabled="False"></Button>
         </StackPanel>
     </Grid>
         
