@@ -40,3 +40,14 @@ In the next sprint I will be creating the database and CRUD functions necessary 
 
 ![Sprint 2 - Project Manager Post-Sprint](/readme_images/sprint1_postsprint.png)
 
+## Sprint 2 - 12/05/2021
+
+### Goals
+
+- [ ] Implement database from entity relationship diagram
+- [ ] Complete user story 1.1 DM Map View
+- [ ] Complete user story 2.1 Edit Province Contents
+
+### Pre-Sprint Project Board
+
+![](readme_images/sprint2_presprint.png)
