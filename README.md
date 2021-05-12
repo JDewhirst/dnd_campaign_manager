@@ -44,11 +44,25 @@ In the next sprint I will be creating the database and CRUD functions necessary 
 
 ### Goals
 
-- [ ] Implement database from entity relationship diagram
-- [ ] Complete user story 1.1 DM Map View
-- [ ] Complete user story 2.1 Edit Province Contents
+- [x] Implement database from entity relationship diagram
+- [x] Complete user story 1.1 DM Map View
+- [x] Complete user story 2.1 Edit Province Contents
 
 ### Pre-Sprint Project Board
 
 ![](readme_images/sprint2_presprint.png)
+
+### Sprint Review
+
+Implemented database from ERD and all user stories from sprint.
+
+### Sprint Retrospective
+
+This sprint went smoother than the previous one, completed all goals. Overall I'm happy with it.
+
+In the next sprint I will be covering user stories 1.3 and 1.4
+
+### Post-Sprint Project Board
+
+![](/readme_images/sprint2_postsprint.png)
 
