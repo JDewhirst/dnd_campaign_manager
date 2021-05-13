@@ -91,3 +91,6 @@ I also broke down the acceptance criteria for user stories 1.3 (which was in thi
 
 Tomorrow/later today I am going to attempt to go for user story 2.2 (Edit Random Encounter Tables), and generally go about sprucing up the gui from it's rudimentary state right now, this may involve drawing wire-frames.  As well as make sure as much of the CRUD and other logic in DnDCampaignManagerApp is covered in unit tests as possible.
 
+### Post-Sprint Project Board
+
+![](readme_images/sprint3_postsprint.png)
