@@ -96,10 +96,6 @@ namespace DnDCampaignManagerWPF
         {
             var randomEncounterDetails = _provinceManager.GetProvinceRandomEncounterDetails(ProvinceNameBox.Text);
             RandomEncounterResultBox.Text = DiceRoller.RollEncounter(randomEncounterDetails);
-            // get the dice string var dice = 
-            // get the result of the  = DiceRoller.RollDice(dice)
-            // get the result from the table
-            //RandomEncounterResultBox.Text = ;
         }
 
         private void EditProvinceInformation_Button_Click(object sender, RoutedEventArgs e)
