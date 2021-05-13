@@ -79,10 +79,15 @@ In the next sprint I will be covering user stories 1.3 and 1.4
 
 ### Sprint Review
 
-Completed user story 4
+Completed user story 1.4, did not complete user story 1.3.
 
 ### Sprint Retrospective
 
 Was quite heavily blocked by inexperience with working with JSON in C#, also by altering my database. I added a column to the RandomEncounters table to hold the dice associated with that set of encounters, which made the code around doing this somewhat cleaner. Spent a good hour trying to edit the database, then burn it down such that I could build it again. 
 
 In the future I should become more familiar with methods for dealing with JSON in c#.
+
+I also broke down the acceptance criteria for user stories 1.3 (which was in this sprint and un-completed) as well as the criteria for user story 2.2. Both User Stories were clear but the acceptance criteria was over-broad, lot's of different little bits all in one gherkin statement which meant it was not very clear exactly what the steps would be.
+
+Tomorrow/later today I am going to attempt to go for user story 2.2 (Edit Random Encounter Tables), and generally go about sprucing up the gui from it's rudimentary state right now, this may involve drawing wire-frames.  As well as make sure as much of the CRUD and other logic in DnDCampaignManagerApp is covered in unit tests as possible.
+
