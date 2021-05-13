@@ -11,7 +11,7 @@ namespace DnDCampaignManagerApp
     {
         private static Random r = new Random();
 
-        private static string RollDice(string dice)
+        public static string RollDice(string dice)
         {
             var diceDetail = ParseDice(dice);
             var numDice = diceDetail.Item1;
@@ -24,7 +24,7 @@ namespace DnDCampaignManagerApp
             return result.ToString();
         }
 
-        private static Tuple<int, int> ParseDice(string dice)
+        public static Tuple<int, int> ParseDice(string dice)
         {
             int numDice = Convert.ToInt32(dice.Split('d')[0]);
             int diceType = Convert.ToInt32(dice.Split('d')[1]);
