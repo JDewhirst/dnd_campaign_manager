@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,11 +12,21 @@ namespace CampaignManagerData
             Console.WriteLine("Hello World!");
             //GenerateTerrainDetails();
             //GenerateProvinces();
-            using (var db = new DnDCampaignManagerContext())
-            {
-                var pQuery = db.Provinces.ToList();
-                pQuery.ForEach(p => Console.WriteLine(p.ProvinceName));
-            }
+            //using (var db = new DnDCampaignManagerContext())
+            //{
+            //    var pQuery = db.Provinces.ToList();
+            //    pQuery.ForEach(p => Console.WriteLine(p.ProvinceName));
+            //}
+            //GenerateRandomEncounters();
+
+            //var test = @"{  
+            //'FirstName':'Olivia',  
+            //'LastName':'Mason'}";
+            //Console.WriteLine(test);
+            //var test2 = JObject.Parse(test);
+            //Console.WriteLine(test2["FirstName"]);
+            
+               
         }
 
         public static void GenerateTerrainDetails()
@@ -119,6 +130,22 @@ namespace CampaignManagerData
                 provinceList.ForEach(p => db.Provinces.Add(p));
                 db.SaveChanges();
             }
+        }
+
+        public static void GenerateRandomEncounters()
+        {
+            List<RandomEncounter> randomEncounters = new List<RandomEncounter>()
+            { 
+                new RandomEncounter(){RandEncounterTableId = "Creepy Wood", Dice = "2d4", RandEncounter = @"{ '2':'goblin', '3':'bandits', '4':'wolves', '5':'bandits', '6':'bandits', '7':'bandits', '8':'Will 'o the Wisp' }"},
+                new RandomEncounter(){RandEncounterTableId = "Boring Plain", Dice = "1d6", RandEncounter = @"{ '1':'Auroch', '2':'Knights', '3':'Merhant Caravan', '4':'Razorgrass', '5':'Orcish raiders', '6':'Bandits'}"}
+            };
+            
+            using (var db = new DnDCampaignManagerContext())
+            {
+                randomEncounters.ForEach(re => db.RandomEncounters.Add(re));
+                db.SaveChanges();
+            }
+
         }
     }
 }

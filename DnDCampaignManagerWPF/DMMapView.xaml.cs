@@ -94,7 +94,12 @@ namespace DnDCampaignManagerWPF
 
         private void RollRandomEncounter_Button_Click(object sender, RoutedEventArgs e)
         {
-            RandomEncounterResultBox.Text = "Not yet implemented";
+            var randomEncounterDetails = _provinceManager.GetProvinceRandomEncounterDetails(ProvinceNameBox.Text);
+            RandomEncounterResultBox.Text = DiceRoller.RollEncounter(randomEncounterDetails);
+            // get the dice string var dice = 
+            // get the result of the  = DiceRoller.RollDice(dice)
+            // get the result from the table
+            //RandomEncounterResultBox.Text = ;
         }
 
         private void EditProvinceInformation_Button_Click(object sender, RoutedEventArgs e)

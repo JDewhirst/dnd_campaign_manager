@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using CampaignManagerData;
 
+
 namespace DnDCampaignManagerApp
 {
     public class ProvinceManager
     {
         public Province SelectedProvince { get; set; }
         private TerrainManager _terrainManager = new TerrainManager();
+        private RandomEncounterManager _randomEncounterManager = new RandomEncounterManager();
 
         public void SetSelectedProvince(object selectedItem)
         {
@@ -81,5 +83,26 @@ namespace DnDCampaignManagerApp
                 db.SaveChanges();
             }
         }
+
+        public List<object> GetProvinceRandomEncounterDetails(string provinceName)
+        {
+            string? tableId;
+            using (var db = new DnDCampaignManagerContext())
+            {
+                SelectedProvince = db.Provinces.Where(p => p.ProvinceName == provinceName).FirstOrDefault();
+                tableId = SelectedProvince.RandEncounterTableId;
+            }
+            if (tableId is not null)
+            {
+                return _randomEncounterManager.GetTableDetails(tableId);
+            }
+            else
+            {
+                return new List<Object>() { "No Table", "No Table", "No Table" };
+            }
+            
+        }
+
+
     }
 }

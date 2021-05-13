@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,5 +23,11 @@ namespace DnDCampaignManagerApp
             return result.ToString();
         }
 
+        public static string RollEncounter(List<object> randomEncounterDetails)
+        {
+            string diceResult = RollDice((string)randomEncounterDetails[1]);
+            JObject table = (JObject)randomEncounterDetails[2];
+            return (string)table[diceResult];
+        }
     }
 }
