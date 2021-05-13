@@ -71,8 +71,18 @@ In the next sprint I will be covering user stories 1.3 and 1.4
 ### Goals
 
 - [ ] Complete user story 1.3 See Travel Times
-- [ ] Complete user story 1.4 Automatically Roll Encounters
+- [x] Complete user story 1.4 Automatically Roll Encounters
 
 ### Pre-Sprint Project Board
 
 ![](readme_images/sprint3_presprint.png)
+
+### Sprint Review
+
+Completed user story 4
+
+### Sprint Retrospective
+
+Was quite heavily blocked by inexperience with working with JSON in C#, also by altering my database. I added a column to the RandomEncounters table to hold the dice associated with that set of encounters, which made the code around doing this somewhat cleaner. Spent a good hour trying to edit the database, then burn it down such that I could build it again. 
+
+In the future I should become more familiar with methods for dealing with JSON in c#.
