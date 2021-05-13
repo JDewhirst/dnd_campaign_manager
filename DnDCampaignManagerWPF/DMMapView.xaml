@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:DnDCampaignManagerWPF"
         mc:Ignorable="d"
         Title="DMMapView" Height="450" Width="800">
+    
     <Grid Name="gridMain" ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -30,25 +31,30 @@
             </Grid.ColumnDefinitions>
         </Grid>
 
-        <StackPanel x:Name="ProvinceInformationPanel" Grid.Column="2">
-            <TextBox x:Name="ProvinceNameBox" FontStyle="Oblique" FontSize="24" Text="Province Name" IsEnabled="False"></TextBox>
-            <TextBox x:Name="ProvinceDescriptionBox" Text="Select a province to see details" TextWrapping="Wrap" IsEnabled="False"/>
 
-            <Label x:Name="ProvinceTravelSpeed" Content="Province Travel Speed"></Label>
-            <TextBox x:Name="ProvinceTravelSpeedBox" Text="" IsEnabled="False"/>
+        <ScrollViewer Grid.Column="2"> 
+            <StackPanel x:Name="ProvinceInformationPanel" Grid.Column="2">
             
-            <TextBox x:Name="ProvinceHiddenFeature" Text="Hidden Feature" FontStyle="Oblique" FontSize="24" IsEnabled="False"></TextBox>
-            <TextBox x:Name="ProvinceHiddenFeatureBox" Text="Select a province to see it's hidden feature" TextWrapping="Wrap" IsEnabled="False"/>
+                <TextBox x:Name="ProvinceNameBox" FontStyle="Oblique" FontSize="24" Text="Province Name" IsEnabled="False"></TextBox>
             
-            <Button x:Name="RollRandomEncounter_Button" Content="Roll Random Encounter" Click="RollRandomEncounter_Button_Click"></Button>
-            <TextBox x:Name="RandomEncounterResultBox" Text="" IsEnabled="False"></TextBox>
-            
-            <Button x:Name="EditProvinceInformation_Button" Content="Edit" Click="EditProvinceInformation_Button_Click"></Button>
-            <Button x:Name="SaveProvinceInformation_Button" Content="Save" Click="SaveProvinceInformation_Button_Click" IsEnabled="False"></Button>
+                <TextBox x:Name="ProvinceDescriptionBox" Text="Select a province to see details" TextWrapping="Wrap" IsEnabled="False"/>
 
-            <ListBox x:Name="ProvincesDropDown"></ListBox>
-        </StackPanel>
+                <Label x:Name="ProvinceTravelSpeed" Content="Province Travel Speed"></Label>
+                <TextBox x:Name="ProvinceTravelSpeedBox" Text="" IsEnabled="False"/>
+            
+                <TextBox x:Name="ProvinceHiddenFeature" Text="Hidden Feature" FontStyle="Oblique" FontSize="24" IsEnabled="False"></TextBox>
+                <TextBox x:Name="ProvinceHiddenFeatureBox" Text="Select a province to see it's hidden feature" TextWrapping="Wrap" IsEnabled="False"/>
+            
+                <Button x:Name="RollRandomEncounter_Button" Content="Roll Random Encounter" Click="RollRandomEncounter_Button_Click"></Button>
+                <TextBox x:Name="RandomEncounterResultBox" Text="" IsEnabled="False"></TextBox>
+            
+                <Button x:Name="EditProvinceInformation_Button" Content="Edit" Click="EditProvinceInformation_Button_Click"></Button>
+                <Button x:Name="SaveProvinceInformation_Button" Content="Save" Click="SaveProvinceInformation_Button_Click" IsEnabled="False"></Button>
+
+                <ListBox x:Name="ProvincesDropDown"></ListBox>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
         
-
+    
 </Window>

@@ -17,7 +17,7 @@ namespace DnDCampaignManagerTests
         }
 
         [Test]
-        public void WhenAttemptIncorrectDiceThrowException()
+        public void WhenAttemptToParseIncorrectDiceThrowException()
         {
             Assert.Fail();
         }
