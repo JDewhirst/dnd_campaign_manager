@@ -66,3 +66,13 @@ In the next sprint I will be covering user stories 1.3 and 1.4
 
 ![](/readme_images/sprint2_postsprint.png)
 
+## Sprint 3 - 13/05/2021
+
+### Goals
+
+- [ ] Complete user story 1.3 See Travel Times
+- [ ] Complete user story 1.4 Automatically Roll Encounters
+
+### Pre-Sprint Project Board
+
+![](readme_images/sprint3_presprint.png)
