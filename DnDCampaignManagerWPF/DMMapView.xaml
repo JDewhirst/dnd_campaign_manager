@@ -37,7 +37,7 @@
             <Label x:Name="ProvinceTravelSpeed" Content="Province Travel Speed"></Label>
             <TextBox x:Name="ProvinceTravelSpeedBox" Text="" IsEnabled="False"/>
             
-            <TextBox x:Name="ProvinceHiddenFeature" Text="Hidden Feature" FontStyle="Oblique" FontSize="24"></TextBox>
+            <TextBox x:Name="ProvinceHiddenFeature" Text="Hidden Feature" FontStyle="Oblique" FontSize="24" IsEnabled="False"></TextBox>
             <TextBox x:Name="ProvinceHiddenFeatureBox" Text="Select a province to see it's hidden feature" TextWrapping="Wrap" IsEnabled="False"/>
             
             <Button x:Name="RollRandomEncounter_Button" Content="Roll Random Encounter" Click="RollRandomEncounter_Button_Click"></Button>

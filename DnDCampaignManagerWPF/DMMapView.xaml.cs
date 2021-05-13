@@ -112,6 +112,8 @@ namespace DnDCampaignManagerWPF
             _provinceManager.UpdateHiddenFeatureDescription(ProvinceNameBox.Text, ProvinceHiddenFeatureBox.Text);
             EditProvinceInformation_Button.IsEnabled = true;
             SaveProvinceInformation_Button.IsEnabled = false;
+            ProvinceDescriptionBox.IsEnabled = false;
+            ProvinceHiddenFeatureBox.IsEnabled = false;
         }
     }
 }
