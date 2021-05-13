@@ -9,9 +9,9 @@ namespace DnDCampaignManagerApp
 {
     public static class DiceRoller
     {
-        static Random r = new Random();
+        private static Random r = new Random();
 
-        public static string RollDice(string dice)
+        private static string RollDice(string dice)
         {
             int numDice = Convert.ToInt32(dice.Split('d')[0]);
             int diceType = Convert.ToInt32(dice.Split('d')[1]);
@@ -22,12 +22,18 @@ namespace DnDCampaignManagerApp
             }
             return result.ToString();
         }
-
         public static string RollEncounter(List<object> randomEncounterDetails)
         {
-            string diceResult = RollDice((string)randomEncounterDetails[1]);
-            JObject table = (JObject)randomEncounterDetails[2];
-            return (string)table[diceResult];
+            if ((string)randomEncounterDetails[1] != "No Table")
+            {
+                string diceResult = RollDice((string)randomEncounterDetails[1]);
+                JObject table = (JObject)randomEncounterDetails[2];
+                return (string)table[diceResult];
+            }
+            else
+            {
+                return "No random encounter table assigned to this province";
+            }
         }
     }
 }

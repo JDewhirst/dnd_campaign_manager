@@ -1,2 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="CampaignManagerData.Province">
+    <Position X="5.25" Y="0.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAACCAIAAACAAAAUAAQAAAAAA=</HashCode>
+      <FileName>Province.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CampaignManagerData.RandomEncounter">
+    <Position X="0.5" Y="3.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAEAAAgEAAAA=</HashCode>
+      <FileName>RandomEncounter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CampaignManagerData.TerrainDetail">
+    <Position X="5.5" Y="3.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAEAAAAAAAAAACAAAAAAAAgAAAAA=</HashCode>
+      <FileName>TerrainDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CampaignManagerData.Character">
+    <Position X="0.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAgAAAAAAAAAZAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9.16" />
+</ClassDiagram>

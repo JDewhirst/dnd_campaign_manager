@@ -12,6 +12,11 @@ namespace DnDCampaignManagerApp
     {
         public RandomEncounter SelectedEncounterTable { get; set; }
 
+        // Create 
+
+        // Update
+
+        // Read
         // get the name, get the dice, get the table
         public List<object> GetTableDetails(string tableId)
         {
@@ -26,5 +31,7 @@ namespace DnDCampaignManagerApp
             }
             return tableDetails;
         }
+
+        // Delete
     }
 }

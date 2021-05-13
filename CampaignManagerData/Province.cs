@@ -22,5 +22,10 @@ namespace CampaignManagerData
         public virtual RandomEncounter RandEncounterTable { get; set; }
         public virtual TerrainDetail Terrain { get; set; }
         public virtual ICollection<Character> Characters { get; set; }
+
+        public override string ToString()
+        {
+            return ProvinceName;
+        }
     }
 }

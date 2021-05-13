@@ -45,6 +45,8 @@
             
             <Button x:Name="EditProvinceInformation_Button" Content="Edit" Click="EditProvinceInformation_Button_Click"></Button>
             <Button x:Name="SaveProvinceInformation_Button" Content="Save" Click="SaveProvinceInformation_Button_Click" IsEnabled="False"></Button>
+
+            <ListBox x:Name="ProvincesDropDown"></ListBox>
         </StackPanel>
     </Grid>
         
