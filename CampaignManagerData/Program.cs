@@ -10,11 +10,11 @@ namespace CampaignManagerData
         {
             Console.WriteLine("Hello World!");
             //GenerateTerrainDetails();
-            GenerateProvinces();
+            //GenerateProvinces();
             using (var db = new DnDCampaignManagerContext())
             {
                 var pQuery = db.Provinces.ToList();
-                pQuery.ForEach(p => Console.WriteLine(p));
+                pQuery.ForEach(p => Console.WriteLine(p.ProvinceName));
             }
         }
 

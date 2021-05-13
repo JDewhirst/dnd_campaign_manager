@@ -14,6 +14,7 @@ namespace CampaignManagerData
 
         public string RandEncounterTableId { get; set; }
         public string RandEncounter { get; set; }
+        public string Dice { get; set; }
 
         public virtual ICollection<Province> Provinces { get; set; }
     }
