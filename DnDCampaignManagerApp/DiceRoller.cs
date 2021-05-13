@@ -13,15 +13,25 @@ namespace DnDCampaignManagerApp
 
         private static string RollDice(string dice)
         {
-            int numDice = Convert.ToInt32(dice.Split('d')[0]);
-            int diceType = Convert.ToInt32(dice.Split('d')[1]);
+            var diceDetail = ParseDice(dice);
+            var numDice = diceDetail.Item1;
+            var dieSize = diceDetail.Item2;
             int result = 0;
             for (int i = 1; i <= numDice; i++)
             {
-                result += r.Next(1, diceType);
+                result += r.Next(1, dieSize);
             }
             return result.ToString();
         }
+
+        private static Tuple<int, int> ParseDice(string dice)
+        {
+            int numDice = Convert.ToInt32(dice.Split('d')[0]);
+            int diceType = Convert.ToInt32(dice.Split('d')[1]);
+            Tuple<int, int> result = new Tuple<int, int>(numDice, diceType);
+            return result;
+        }
+
         public static string RollEncounter(List<object> randomEncounterDetails)
         {
             if ((string)randomEncounterDetails[1] != "No Table")
