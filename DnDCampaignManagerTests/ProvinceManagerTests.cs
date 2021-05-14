@@ -112,7 +112,6 @@ namespace DnDCampaignManagerTests
             var result = _provinceManager.GetProvinceTravelSpeed("Atlantis");
             Assert.AreEqual("1", result);
 
-
         }
 
         [TearDown]

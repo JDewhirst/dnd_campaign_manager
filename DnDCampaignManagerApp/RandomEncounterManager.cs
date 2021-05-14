@@ -18,8 +18,21 @@ namespace DnDCampaignManagerApp
         }
 
         // Create 
+        public void CreateTable(string tableId, string dice, string table)
+        {
+            using (var db = new DnDCampaignManagerContext())
+            {
+                db.RandomEncounters.Add(new RandomEncounter() { RandEncounterTableId = tableId, Dice = dice, RandEncounter = table });
+                db.SaveChanges();
+            }
+        }
 
         // Update
+        public void UpdateTable(string tableId, string newTableId, string dice, string table)
+        {
+            Delete(tableId);
+            CreateTable(newTableId, dice, table);
+        }
 
         // Read
         // get the name, get the dice, get the table
@@ -46,5 +59,14 @@ namespace DnDCampaignManagerApp
         }
 
         // Delete
+        public void Delete(string tableId) 
+        {
+            using (var db = new DnDCampaignManagerContext())
+            {
+                SelectedEncounterTable = db.RandomEncounters.Where(re => re.RandEncounterTableId == tableId).FirstOrDefault();
+                db.RandomEncounters.Remove(SelectedEncounterTable);
+                db.SaveChanges();
+            }
+        }
     }
 }
