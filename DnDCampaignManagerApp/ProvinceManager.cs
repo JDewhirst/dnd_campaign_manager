@@ -69,7 +69,7 @@ namespace DnDCampaignManagerApp
             using (var db = new DnDCampaignManagerContext())
             {
                 SelectedProvince = db.Provinces.Where(p => p.ProvinceName == provinceName).FirstOrDefault();
-                SelectedProvince.ObviousFeature = featureText;
+                if (SelectedProvince is not null) { SelectedProvince.ObviousFeature = featureText; }
                 db.SaveChanges();
             }
         }
@@ -79,7 +79,7 @@ namespace DnDCampaignManagerApp
             using (var db = new DnDCampaignManagerContext())
             {
                 SelectedProvince = db.Provinces.Where(p => p.ProvinceName == provinceName).FirstOrDefault();
-                SelectedProvince.HiddenFeature = featureText;
+                if (SelectedProvince is not null) { SelectedProvince.HiddenFeature = featureText; } 
                 db.SaveChanges();
             }
         }
@@ -90,7 +90,15 @@ namespace DnDCampaignManagerApp
             using (var db = new DnDCampaignManagerContext())
             {
                 SelectedProvince = db.Provinces.Where(p => p.ProvinceName == provinceName).FirstOrDefault();
-                tableId = SelectedProvince.RandEncounterTableId;
+                if (SelectedProvince is not null)
+                {
+                    tableId = SelectedProvince.RandEncounterTableId;
+                }
+                else
+                {
+                    tableId = null;
+                }
+                
             }
             if (tableId is not null)
             {

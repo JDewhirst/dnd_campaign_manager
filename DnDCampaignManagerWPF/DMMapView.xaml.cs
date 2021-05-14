@@ -119,5 +119,12 @@ namespace DnDCampaignManagerWPF
             ProvinceDescriptionBox.IsEnabled = false;
             ProvinceHiddenFeatureBox.IsEnabled = false;
         }
+
+        private void EditRandomEncounters_Button_Click(object sender, RoutedEventArgs e)
+        {
+            EditRandomEncounters editRandomEncounters = new EditRandomEncounters();
+            editRandomEncounters.Show();
+
+        }
     }
 }
