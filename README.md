@@ -101,9 +101,20 @@ Tomorrow/later today I am going to attempt to go for user story 2.2 (Edit Random
 ### Goals
 
 - [ ] Complete user story 2.2
-- [ ] Make the gui look nicer
+- [x] Make the gui look nicer
 
 ### Pre-Sprint Project Board
 
 ![](readme_images/sprint4_presprint.png)
 
+### Sprint Review
+
+Completed work on the gui, prepped my slide for the presentation. Added crud functions necessary for user story 2.2 and created units tests for them which past but the functionality is not implemented in the gui yet. The gui now has a page for this functionality to be implemented
+
+### Sprint Retrospective
+
+Lot's of today was taken up by meetings, so in retrospective I definitely took on too much for this day. But taking that into account I got most of it completed. On my next sprint I'll be finishing user story 2.2. I'll be trying to implement a similar kind of dynamic element generation that I used for the map buttons. However this may be harder to do because I won't necessarily have control over how many entries are going to be generated, since that will be a user input. 
+
+### Post-Sprint Project Board
+
+![](readme_images/sprint4_postsprint.png)
