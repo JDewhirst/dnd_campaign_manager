@@ -43,6 +43,7 @@ namespace DnDCampaignManagerWPF
 
                 MyControl.Name = province.ProvinceName;
                 MyControl.Click += new RoutedEventHandler(MapButtonClick);
+                MyControl.Background = Brushes.Wheat;
 
                 //Add image to button
                 Image img = new Image();
@@ -89,8 +90,9 @@ namespace DnDCampaignManagerWPF
             ProvinceNameBox.Text = button.Name;
             ProvinceDescriptionBox.Text = _provinceManager.GetProvinceObviousFeature(button.Name);
             ProvinceHiddenFeatureBox.Text = _provinceManager.GetProvinceHiddenFeature(button.Name);
-            ProvinceTravelSpeedBox.Text = _provinceManager.GetProvinceTravelSpeed(button.Name);
-            ProvincesDropDown.ItemsSource = _provinceManager.GetAllProvincesQuery();
+            ProvinceTravelSpeedBox.Content = _provinceManager.GetProvinceTravelSpeed(button.Name);
+            RandomEncounterResultBox.Text = "";
+            //ProvincesDropDown.ItemsSource = _provinceManager.GetAllProvincesQuery();
         }
 
         private void RollRandomEncounter_Button_Click(object sender, RoutedEventArgs e)

@@ -11,7 +11,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition MaxWidth="265"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         
         <Grid Name="gridMap" Grid.ColumnSpan="2">
@@ -31,29 +31,40 @@
             </Grid.ColumnDefinitions>
         </Grid>
 
+        <Grid Name="gridInfo" Grid.Column="2" Grid.ColumnSpan="1" Background="Wheat">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-        <ScrollViewer Grid.Column="2"> 
-            <StackPanel x:Name="ProvinceInformationPanel" Grid.Column="2">
+            <TextBox x:Name="ProvinceNameBox" Grid.Row="0" Grid.ColumnSpan="2" FontStyle="Oblique" FontSize="24" Text="Province Name" IsEnabled="False"></TextBox>
+            <Label x:Name="ProvinceTravelSpeed" Grid.Row="1" VerticalAlignment="Top" Content="Travel Speed"></Label>
+            <Label x:Name="ProvinceTravelSpeedBox" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Content="" IsEnabled="False"/>
+            <TextBox x:Name="ProvinceDescriptionBox" VerticalScrollBarVisibility="Visible" Grid.Row="2" Grid.ColumnSpan="2" Text="Select a province to see details" TextWrapping="Wrap" IsEnabled="False"/>
             
-                <TextBox x:Name="ProvinceNameBox" FontStyle="Oblique" FontSize="24" Text="Province Name" IsEnabled="False"></TextBox>
-            
-                <TextBox x:Name="ProvinceDescriptionBox" Text="Select a province to see details" TextWrapping="Wrap" IsEnabled="False"/>
+            <TextBox x:Name="ProvinceHiddenFeature" Grid.Row="3" Grid.ColumnSpan="2" Text="Hidden Feature" FontStyle="Oblique" FontSize="24" IsEnabled="False"></TextBox>
+            <TextBox x:Name="ProvinceHiddenFeatureBox" Grid.Row="4" Grid.ColumnSpan="2" Text="Select a province to see it's hidden feature" TextWrapping="Wrap" IsEnabled="False"/>
 
-                <Label x:Name="ProvinceTravelSpeed" Content="Province Travel Speed"></Label>
-                <TextBox x:Name="ProvinceTravelSpeedBox" Text="" IsEnabled="False"/>
-            
-                <TextBox x:Name="ProvinceHiddenFeature" Text="Hidden Feature" FontStyle="Oblique" FontSize="24" IsEnabled="False"></TextBox>
-                <TextBox x:Name="ProvinceHiddenFeatureBox" Text="Select a province to see it's hidden feature" TextWrapping="Wrap" IsEnabled="False"/>
-            
-                <Button x:Name="RollRandomEncounter_Button" Content="Roll Random Encounter" Click="RollRandomEncounter_Button_Click"></Button>
-                <TextBox x:Name="RandomEncounterResultBox" Text="" IsEnabled="False"></TextBox>
-            
-                <Button x:Name="EditProvinceInformation_Button" Content="Edit" Click="EditProvinceInformation_Button_Click"></Button>
-                <Button x:Name="SaveProvinceInformation_Button" Content="Save" Click="SaveProvinceInformation_Button_Click" IsEnabled="False"></Button>
+            <Button x:Name="EditProvinceInformation_Button" Grid.Row="5" Content="Edit Province Features" Click="EditProvinceInformation_Button_Click"></Button>
+            <Button x:Name="SaveProvinceInformation_Button" Grid.Row="5" Grid.Column="1" Content="Save" Click="SaveProvinceInformation_Button_Click" IsEnabled="False"></Button>
 
-                <ListBox x:Name="ProvincesDropDown"></ListBox>
-            </StackPanel>
-        </ScrollViewer>
+            <Button x:Name="RollRandomEncounter_Button" Grid.Row="6"  Content="Roll Random Encounter" Click="RollRandomEncounter_Button_Click"></Button>
+            <TextBox x:Name="RandomEncounterResultBox" Grid.Row="6" Grid.Column="1" Text="Click to roll a random encounter" TextWrapping="Wrap" VerticalContentAlignment="Center" IsEnabled="False"></TextBox>
+
+            <Button x:Name="EditRandomEncounters_Button" Content="Edit Random Encounters" Grid.ColumnSpan="2"  Grid.Row="7"></Button>
+
+        </Grid>
+
     </Grid>
         
     
