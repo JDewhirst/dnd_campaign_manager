@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DnDCampaignManagerApp;
 
 namespace DnDCampaignManagerWPF
 {
@@ -19,9 +20,32 @@ namespace DnDCampaignManagerWPF
     /// </summary>
     public partial class EditRandomEncounters : Window
     {
+        private RandomEncounterManager _randomEncounterManager = new RandomEncounterManager();
         public EditRandomEncounters()
         {
             InitializeComponent();
+            GenerateListOfEncounters();
+        }
+
+        public void GenerateListOfEncounters()
+        {
+            EncounterTablesListBox.ItemsSource = _randomEncounterManager.GetListOfRandomEncounterTables();
+
+        }
+
+        public void SelectEncounterButton(object sender, RoutedEventArgs e)
+        {
+            // select encounter, click edit, put details in other column, display formatting requirements
+            var selectedItem = EncounterTablesListBox.SelectedItems[0];
+            _randomEncounterManager.SetSelectedEnounterTable(selectedItem);
+            EncounterTableNameTextBox.Text = _randomEncounterManager.SelectedEncounterTable.RandEncounterTableId;
+            EncounterTableDiceTextBox.Text = _randomEncounterManager.SelectedEncounterTable.Dice;
+            EncounterTableTableTextBox.Text = _randomEncounterManager.SelectedEncounterTable.RandEncounter;
+        }
+
+        public void SaveEncounterEditButton(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

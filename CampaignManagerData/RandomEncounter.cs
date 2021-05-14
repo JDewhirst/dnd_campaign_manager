@@ -17,5 +17,10 @@ namespace CampaignManagerData
         public string Dice { get; set; }
 
         public virtual ICollection<Province> Provinces { get; set; }
+
+        public override string ToString()
+        {
+            return $"{RandEncounterTableId} - {Dice} - {RandEncounter}";
+        }
     }
 }

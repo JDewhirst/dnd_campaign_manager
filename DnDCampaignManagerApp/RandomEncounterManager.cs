@@ -12,6 +12,11 @@ namespace DnDCampaignManagerApp
     {
         public RandomEncounter SelectedEncounterTable { get; set; }
 
+        public void SetSelectedEnounterTable(object selectedItem)
+        {
+            SelectedEncounterTable = (RandomEncounter)selectedItem;
+        }
+
         // Create 
 
         // Update
@@ -30,6 +35,14 @@ namespace DnDCampaignManagerApp
 
             }
             return tableDetails;
+        }
+
+        public List<RandomEncounter> GetListOfRandomEncounterTables()
+        {
+            using (var db = new DnDCampaignManagerContext())
+            {
+                return db.RandomEncounters.ToList();
+            }    
         }
 
         // Delete
