@@ -7,19 +7,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\366px-Atlas_%28mythology%29.png" />
+    <None Remove="Images\Forest.bmp" />
+    <None Remove="Images\Hill.bmp" />
+    <None Remove="Images\Mountain.bmp" />
+    <None Remove="Images\Plain.bmp" />
+    <None Remove="Images\Urban.bmp" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DnDCampaignManagerApp\DnDCampaignManagerApp.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Images\366px-Atlas_%28mythology%29.png">
+    <Resource Include="Images\366px-Atlas_(mythology).png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\Forest.bmp">
+    </Resource>
+    <Resource Include="Images\Forest.bmp">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\Hill.bmp">
+    </Resource>
+    <Resource Include="Images\Hill.bmp">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
+    </Resource>
+    <Resource Include="Images\Mountain.bmp" />
+    <Resource Include="Images\Plain.bmp" />
+    <Resource Include="Images\Urban.bmp" />
   </ItemGroup>
 
 </Project>

@@ -47,12 +47,12 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <TextBox x:Name="ProvinceNameBox" Grid.Row="0" Grid.ColumnSpan="2" FontStyle="Oblique" FontSize="24" Text="Province Name" IsEnabled="False"></TextBox>
+            <Label x:Name="ProvinceNameBox" Grid.Row="0" Grid.ColumnSpan="2" FontStyle="Oblique" FontSize="24" Content="Province Name" IsEnabled="False"></Label>
             <Label x:Name="ProvinceTravelSpeed" Grid.Row="1" VerticalAlignment="Top" Content="Travel Speed"></Label>
             <Label x:Name="ProvinceTravelSpeedBox" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Content="" IsEnabled="False"/>
             <TextBox x:Name="ProvinceDescriptionBox" VerticalScrollBarVisibility="Visible" Grid.Row="2" Grid.ColumnSpan="2" Text="Select a province to see details" TextWrapping="Wrap" IsEnabled="False"/>
             
-            <TextBox x:Name="ProvinceHiddenFeature" Grid.Row="3" Grid.ColumnSpan="2" Text="Hidden Feature" FontStyle="Oblique" FontSize="24" IsEnabled="False"></TextBox>
+            <Label x:Name="ProvinceHiddenFeature" Grid.Row="3" Grid.ColumnSpan="2" Content="Hidden Feature" FontStyle="Oblique" FontSize="24" IsEnabled="False"></Label>
             <TextBox x:Name="ProvinceHiddenFeatureBox" Grid.Row="4" Grid.ColumnSpan="2" Text="Select a province to see it's hidden feature" TextWrapping="Wrap" IsEnabled="False"/>
 
             <Button x:Name="EditProvinceInformation_Button" Grid.Row="5" Content="Edit Province Features" Click="EditProvinceInformation_Button_Click"></Button>

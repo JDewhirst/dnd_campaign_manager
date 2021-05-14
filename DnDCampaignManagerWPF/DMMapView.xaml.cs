@@ -50,19 +50,19 @@ namespace DnDCampaignManagerWPF
                 switch(province.TerrainId)
                 {
                     case "Plain":
-                        img.Source = new BitmapImage(new Uri(@"C:\Users\jackd\Documents\Sparta_Global\C#SDET\three_tier_project\dnd_campaign_manager\DnDCampaignManagerWPF\Images\Plain.bmp"));
+                        img.Source = new BitmapImage(new Uri(@"Images\Plain.bmp", UriKind.Relative));
                         break;
                     case "Forest":
-                        img.Source = new BitmapImage(new Uri(@"C:\Users\jackd\Documents\Sparta_Global\C#SDET\three_tier_project\dnd_campaign_manager\DnDCampaignManagerWPF\Images\Forest.bmp"));
+                        img.Source = new BitmapImage(new Uri(@"Images\Forest.bmp", UriKind.Relative));
                         break;
                     case "Hill":
-                        img.Source = new BitmapImage(new Uri(@"C:\Users\jackd\Documents\Sparta_Global\C#SDET\three_tier_project\dnd_campaign_manager\DnDCampaignManagerWPF\Images\Hill.bmp"));
+                        img.Source = new BitmapImage(new Uri(@"Images\Hill.bmp", UriKind.Relative));
                         break;
                     case "Mountain":
-                        img.Source = new BitmapImage(new Uri(@"C:\Users\jackd\Documents\Sparta_Global\C#SDET\three_tier_project\dnd_campaign_manager\DnDCampaignManagerWPF\Images\Mountain.bmp"));
+                        img.Source = new BitmapImage(new Uri(@"Images\Mountain.bmp", UriKind.Relative));
                         break;
                     case "Urban":
-                        img.Source = new BitmapImage(new Uri(@"C:\Users\jackd\Documents\Sparta_Global\C#SDET\three_tier_project\dnd_campaign_manager\DnDCampaignManagerWPF\Images\Urban.bmp"));
+                        img.Source = new BitmapImage(new Uri(@"Images\Urban.bmp", UriKind.Relative));
                         break;
                 }
                 img.Stretch = Stretch.Fill;
@@ -87,7 +87,7 @@ namespace DnDCampaignManagerWPF
         private void MapButtonClick(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            ProvinceNameBox.Text = button.Name;
+            ProvinceNameBox.Content = button.Name;
             ProvinceDescriptionBox.Text = _provinceManager.GetProvinceObviousFeature(button.Name);
             ProvinceHiddenFeatureBox.Text = _provinceManager.GetProvinceHiddenFeature(button.Name);
             ProvinceTravelSpeedBox.Content = _provinceManager.GetProvinceTravelSpeed(button.Name);
@@ -97,7 +97,7 @@ namespace DnDCampaignManagerWPF
 
         private void RollRandomEncounter_Button_Click(object sender, RoutedEventArgs e)
         {
-            var randomEncounterDetails = _provinceManager.GetProvinceRandomEncounterDetails(ProvinceNameBox.Text);
+            var randomEncounterDetails = _provinceManager.GetProvinceRandomEncounterDetails(ProvinceNameBox.Content.ToString());
             RandomEncounterResultBox.Text = DiceRoller.RollEncounter(randomEncounterDetails);
         }
 
@@ -112,8 +112,8 @@ namespace DnDCampaignManagerWPF
 
         private void SaveProvinceInformation_Button_Click(object sender, RoutedEventArgs e)
         {
-            _provinceManager.UpdateObviousFeatureDescription(ProvinceNameBox.Text, ProvinceDescriptionBox.Text);
-            _provinceManager.UpdateHiddenFeatureDescription(ProvinceNameBox.Text, ProvinceHiddenFeatureBox.Text);
+            _provinceManager.UpdateObviousFeatureDescription(ProvinceNameBox.Content.ToString(), ProvinceDescriptionBox.Text);
+            _provinceManager.UpdateHiddenFeatureDescription(ProvinceNameBox.Content.ToString(), ProvinceHiddenFeatureBox.Text);
             EditProvinceInformation_Button.IsEnabled = true;
             SaveProvinceInformation_Button.IsEnabled = false;
             ProvinceDescriptionBox.IsEnabled = false;
