@@ -124,13 +124,18 @@ Lot's of today was taken up by meetings, so in retrospective I definitely took o
 ### Goals
 
 - [x] Plan for and practice presentation
-- [ ] Complete user story 2.2
+- [x] Complete user story 2.2
+- [ ] Add dummy data
 
 ### Pre-Sprint Project Board
 
 ![](readme_images/sprint5_presprint.png)
 
 ### Sprint Review
+
+Completed the mvp version of user story 2.2, prepared for the presentation with trial run. Presentation trial timed for ~30 minutes, with some stumbling, should be faster on the day.
+
+
 
 ### Sprint Retrospective
 
