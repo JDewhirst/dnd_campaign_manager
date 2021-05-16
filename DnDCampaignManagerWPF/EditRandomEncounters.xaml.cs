@@ -43,9 +43,25 @@ namespace DnDCampaignManagerWPF
             EncounterTableTableTextBox.Text = _randomEncounterManager.SelectedEncounterTable.RandEncounter;
         }
 
-        public void SaveEncounterEditButton(object sender, RoutedEventArgs e)
+        private void EditTableButton_Click(object sender, RoutedEventArgs e)
         {
+            EncounterTableNameTextBox.IsEnabled = true;
+            EncounterTableDiceTextBox.IsEnabled = true;
+            EncounterTableTableTextBox.IsEnabled = true;
+            SaveTableButton.IsEnabled = true;
+            EditTableButton.IsEnabled = false;
+        }
 
+        private void SaveTableButton_Click(object sender, RoutedEventArgs e)
+        {
+            EncounterTableNameTextBox.IsEnabled = false;
+            EncounterTableDiceTextBox.IsEnabled = false;
+            EncounterTableTableTextBox.IsEnabled = false;
+            SaveTableButton.IsEnabled = false;
+            EditTableButton.IsEnabled = true;
+
+            _randomEncounterManager.UpdateTable(_randomEncounterManager.SelectedEncounterTable.RandEncounterTableId, EncounterTableNameTextBox.Text, EncounterTableDiceTextBox.Text, EncounterTableTableTextBox.Text);
+            GenerateListOfEncounters();
         }
     }
 }

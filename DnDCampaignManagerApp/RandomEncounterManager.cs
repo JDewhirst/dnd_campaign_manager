@@ -63,8 +63,13 @@ namespace DnDCampaignManagerApp
         {
             using (var db = new DnDCampaignManagerContext())
             {
-                SelectedEncounterTable = db.RandomEncounters.Where(re => re.RandEncounterTableId == tableId).FirstOrDefault();
-                db.RandomEncounters.Remove(SelectedEncounterTable);
+                // delete references to this row in the provinces table
+                var provinces = db.Provinces.Where(p => p.RandEncounterTableId == tableId).ToList();
+                provinces.ForEach(p => p.RandEncounterTableId = null);
+                
+                // delete table
+                var tableToDelete = db.RandomEncounters.Where(re => re.RandEncounterTableId == tableId).FirstOrDefault();
+                db.RandomEncounters.RemoveRange(tableToDelete);
                 db.SaveChanges();
             }
         }
