@@ -135,7 +135,7 @@ Lot's of today was taken up by meetings, so in retrospective I definitely took o
 
 Completed the mvp version of user story 2.2, prepared for the presentation with trial run. Presentation trial timed for ~30 minutes, with some stumbling, should be faster on the day.
 
-
+Extras - Added ability to add new rand encounter table, added ability to delete a random encounter table
 
 ### Sprint Retrospective
 
