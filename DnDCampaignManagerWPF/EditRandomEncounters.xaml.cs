@@ -41,6 +41,8 @@ namespace DnDCampaignManagerWPF
             EncounterTableNameTextBox.Text = _randomEncounterManager.SelectedEncounterTable.RandEncounterTableId;
             EncounterTableDiceTextBox.Text = _randomEncounterManager.SelectedEncounterTable.Dice;
             EncounterTableTableTextBox.Text = _randomEncounterManager.SelectedEncounterTable.RandEncounter;
+            EditTableButton.IsEnabled = true;
+            DeleteTableButton.IsEnabled = true;
         }
 
         private void EditTableButton_Click(object sender, RoutedEventArgs e)
@@ -50,6 +52,7 @@ namespace DnDCampaignManagerWPF
             EncounterTableTableTextBox.IsEnabled = true;
             SaveTableButton.IsEnabled = true;
             EditTableButton.IsEnabled = false;
+
         }
 
         private void SaveTableButton_Click(object sender, RoutedEventArgs e)
@@ -58,10 +61,50 @@ namespace DnDCampaignManagerWPF
             EncounterTableDiceTextBox.IsEnabled = false;
             EncounterTableTableTextBox.IsEnabled = false;
             SaveTableButton.IsEnabled = false;
-            EditTableButton.IsEnabled = true;
+            EditTableButton.IsEnabled = false;
+            DeleteTableButton.IsEnabled = false;
 
-            _randomEncounterManager.UpdateTable(_randomEncounterManager.SelectedEncounterTable.RandEncounterTableId, EncounterTableNameTextBox.Text, EncounterTableDiceTextBox.Text, EncounterTableTableTextBox.Text);
+            if (_randomEncounterManager.SelectedEncounterTable is not null)
+            {
+                _randomEncounterManager.UpdateTable(_randomEncounterManager.SelectedEncounterTable.RandEncounterTableId, EncounterTableNameTextBox.Text, EncounterTableDiceTextBox.Text, EncounterTableTableTextBox.Text);
+            }
+            else
+            {
+                _randomEncounterManager.CreateTable(EncounterTableNameTextBox.Text, EncounterTableDiceTextBox.Text, EncounterTableTableTextBox.Text);
+            }
+            EncounterTableNameTextBox.Text = "";
+            EncounterTableDiceTextBox.Text = "";
+            EncounterTableTableTextBox.Text  = "";
+
+
             GenerateListOfEncounters();
+            
+        }
+
+        private void AddNewTableButton_Click(object sender, RoutedEventArgs e)
+        {
+            EncounterTableNameTextBox.IsEnabled = true;
+            EncounterTableDiceTextBox.IsEnabled = true;
+            EncounterTableTableTextBox.IsEnabled = true;
+            SaveTableButton.IsEnabled = true;
+            EditTableButton.IsEnabled = false;
+            DeleteTableButton.IsEnabled = false;
+
+        }
+
+        private void DeleteTableButton_Click(object sender, RoutedEventArgs e)
+        {
+            _randomEncounterManager.Delete(_randomEncounterManager.SelectedEncounterTable.RandEncounterTableId);
+            EncounterTableNameTextBox.Text = "";
+            EncounterTableDiceTextBox.Text = "";
+            EncounterTableTableTextBox.Text = "";
+            EncounterTableNameTextBox.IsEnabled = false;
+            EncounterTableDiceTextBox.IsEnabled = false;
+            EncounterTableTableTextBox.IsEnabled = false;
+            SaveTableButton.IsEnabled = false;
+            EditTableButton.IsEnabled = false;
+            DeleteTableButton.IsEnabled = false;
+
         }
     }
 }

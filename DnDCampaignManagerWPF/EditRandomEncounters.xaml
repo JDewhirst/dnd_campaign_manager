@@ -14,7 +14,8 @@
         </Grid.ColumnDefinitions>
 
         <ListBox x:Name="EncounterTablesListBox" Grid.Column="0" Margin="37,44,29,44"></ListBox>
-        <Button x:Name="SelectEncounterTableListBox" Grid.Column="1" Content="Select Table" Click="SelectEncounterButton" Margin="0,192,10,195"/>
+        <Button x:Name="SelectEncounterTable" Grid.Column="1" Content="Select Table" Click="SelectEncounterButton" Margin="0,138,10,249"/>
+        <Button x:Name="AddNewTableButton" Grid.Column="1" Content="Add New Table" Click="EditTableButton_Click" Margin="0,194,10,193"/>
 
         <Grid Grid.Column="2">
             <Grid.ColumnDefinitions>
@@ -38,8 +39,11 @@
 
             <Label Content="Table Results" Grid.Column="0" Grid.Row="2"></Label>
             <TextBox x:Name="EncounterTableTableTextBox" IsEnabled="False"  Grid.Row="3" Grid.ColumnSpan="2" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="10,0,10,169"></TextBox>
-            <Button x:Name="EditTableButton" Content="Edit" Margin="10,200,17,130" Grid.Row="3" Click="EditTableButton_Click"></Button>
-            <Button x:Name="SaveTableButton" Content="Save" Grid.Column="1" Margin="4,200,10,130" Grid.Row="3" Click="SaveTableButton_Click"></Button>
+            <Button x:Name="EditTableButton" IsEnabled="False" Content="Edit" Margin="10,200,17,130" Grid.Row="3" Click="EditTableButton_Click"></Button>
+            <Button x:Name="SaveTableButton" IsEnabled="False" Content="Save" Grid.Column="1" Margin="4,200,10,130" Grid.Row="3" Click="SaveTableButton_Click"></Button>
+            <Button x:Name="DeleteTableButton" IsEnabled="False" Content="Delete" Margin="10,243,17,89" Grid.Row="3" Click="DeleteTableButton_Click"/>
+
         </Grid>
+
     </Grid>
 </Window>
