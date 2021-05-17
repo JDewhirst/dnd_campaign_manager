@@ -139,5 +139,10 @@ Extras - Added ability to add new rand encounter table, added ability to delete 
 
 ### Sprint Retrospective
 
+In this sprint my aim was to complete user story 2.2, as well as to do the dry run of our group presentation. The presentation had some minor hiccups, but despite those we got in a time of 30 minutes, I think it'll be pretty smooth after another practice. 
+
+I implemented the minimal viable product version of user story 2.2, which involves asking the user to enter a string for their random encounter table in json format. This is in general a bad idea. If they enter an incorrect string the program will crash when trying to roll on that table. Ideally there would be a dynamically generated set of textboxes for entry, which would prevent incorrect entries. On my next sprint I will spend some time attempting to implement this but I'm going to timebox it to an hour or two since it's the last sprint and there are other tasks which need to be completed; editing what the random encounter table of each province is, adding a full suite of dummy data (mostly provinces), complete documentation for users and developers. 
+
 ### Post-Sprint Project Board
 
+![](readme_images/sprint5_postsprint.png)
