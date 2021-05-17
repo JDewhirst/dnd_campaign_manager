@@ -60,7 +60,7 @@
             <Button x:Name="SaveProvinceInformation_Button" Grid.Row="5" Grid.Column="1" Content="Save" Click="SaveProvinceInformation_Button_Click" IsEnabled="False"></Button>
 
             <Label x:Name="RandomEncounterTable_Label" Content="Random Encounter Table:" Grid.Row="6" Grid.Column="0"></Label>
-            <ListBox x:Name="RandomEncounterTables_ListBox" Grid.Row="6" Grid.Column="1" SelectionMode="Single" ></ListBox>
+            <TextBox x:Name="ProvinceRandomEncounterTable_Box" Grid.Row="6" Grid.Column="1" IsEnabled="False" ></TextBox>
             
             <Button x:Name="RollRandomEncounter_Button" Grid.Row="7"  Content="Roll Random Encounter" Click="RollRandomEncounter_Button_Click"></Button>
             <TextBox x:Name="RandomEncounterResultBox" Grid.Row="7" Grid.Column="1" Text="Click to roll a random encounter" TextWrapping="Wrap" VerticalContentAlignment="Center" IsEnabled="False"></TextBox>

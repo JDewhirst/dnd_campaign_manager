@@ -92,6 +92,7 @@ namespace DnDCampaignManagerWPF
             ProvinceDescriptionBox.Text = _provinceManager.GetProvinceObviousFeature(button.Name);
             ProvinceHiddenFeatureBox.Text = _provinceManager.GetProvinceHiddenFeature(button.Name);
             ProvinceTravelSpeedBox.Content = _provinceManager.GetProvinceTravelSpeed(button.Name);
+            ProvinceRandomEncounterTable_Box.Text = _provinceManager.GetProvinceRandomEncounterDetails(button.Name)[0].ToString();
             RandomEncounterResultBox.Text = "";
             
             //ProvincesDropDown.ItemsSource = _provinceManager.GetAllProvincesQuery();
