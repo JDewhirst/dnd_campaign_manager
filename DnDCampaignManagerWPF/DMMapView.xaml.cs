@@ -129,5 +129,10 @@ namespace DnDCampaignManagerWPF
             editRandomEncounters.Show();
         }
 
+        private void SelectRandomEncounterTable_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+
+        }
     }
 }

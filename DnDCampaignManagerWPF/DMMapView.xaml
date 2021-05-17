@@ -42,6 +42,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -64,9 +65,11 @@
             
             <Button x:Name="RollRandomEncounter_Button" Grid.Row="7"  Content="Roll Random Encounter" Click="RollRandomEncounter_Button_Click"></Button>
             <TextBox x:Name="RandomEncounterResultBox" Grid.Row="7" Grid.Column="1" Text="Click to roll a random encounter" TextWrapping="Wrap" VerticalContentAlignment="Center" IsEnabled="False"></TextBox>
-
-            <Button x:Name="EditRandomEncounters_Button" Content="Edit Random Encounters" Grid.ColumnSpan="2"  Grid.Row="8" Click="EditRandomEncounters_Button_Click"></Button>
-
+            
+            <Button x:Name="SelectRandomEncounterTable_Button" Grid.Row="8" Grid.ColumnSpan="2" Content="Select Random Encounter Table" Click="SelectRandomEncounterTable_Button_Click"></Button>
+            
+            <Button x:Name="EditRandomEncounters_Button" Content="Edit Random Encounter Tables" Grid.ColumnSpan="2"  Grid.Row="9" Click="EditRandomEncounters_Button_Click"></Button>
+            
         </Grid>
 
     </Grid>
