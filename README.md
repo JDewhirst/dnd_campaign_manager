@@ -34,6 +34,12 @@ This project also depends on a database. Once you have installed the NuGet packa
 
 Once the database has been constructed you may populate it with some dummy data using the functions in ``/CampaignManagerData/Program.cs` Note that the provinces table has foreign keys for the other tables, if you wish to include those foreign keys in an entry in provinces you must ensure that the corresponding entry exists in the other tables.
 
+### Entity Framework Diagram and Class Diagram
+
+![](/readme_images/databaseERD.png)
+
+![](/readme_images/classdiagram.png)
+
 ## Definition Of Done
 
 - [ ] All user stories have been reviewed and are done
