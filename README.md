@@ -187,14 +187,14 @@ I implemented the minimal viable product version of user story 2.2, which involv
 
 ### Goals
 
-- [ ] Plan for and practice presentation
-- [ ] Fix bug with adding new table in Edit Random Encounters page. 
+- [x] Plan for and practice presentation
+- [x] Fix bug with adding new table in Edit Random Encounters page. 
 - [ ] Implement the hard version of editing random encounters
 - [x] Presentation dry run 2
-- [ ] Presentation dry run 3
+- [x] Presentation dry run 3
 - [x] Add dummy data
 - [ ] Add ability to change the random encounter table associated with a province
-- [ ] Add info to README.md for developers
+- [x] Add info to README.md for developers
 - [ ] Create readme for users
 - [x] Update class diagram for database model
 - [x] Upload image of class diagram for database model to README.md
@@ -205,7 +205,14 @@ I implemented the minimal viable product version of user story 2.2, which involv
 
 ### Sprint Review
 
+Completed all tasks related to preperation for the presentation tomorrow, as well as adding some dummy data to the database. Did not complete the work related to the editing random encounters feature.
+
 ### Sprint Retrospective
+
+Today I attempted to add a dynamic form to the random encounter editing page for entering the values for a random table based on user specification of the dice. I knew that this would be difficult to do, since I was learning lot's of new concepts in order to do it. On top of this it was a very busy day otherwise, with lot's of presentation and interview practice, as well as other tasks such as updating this readme with documentation. I timeboxed working on this to two hours max and unfortunately was not able to implement it in that time.
+
+In retrospect my full list of sprint goals today was more of a wishlist than a sober assessment of what was possible. I did not anticipate just how much time we would be spending on the presentations, as a result only just over half of today's sprint goals where met. In the future I would want to attempt to implement a feature like this, where I need to assimilate lot's of new information to complete it, earlier in the development process.
 
 ### Post-Sprint Project Board
 
+![](readme_images/sprint6_postsprint.png)
