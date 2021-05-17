@@ -182,3 +182,30 @@ I implemented the minimal viable product version of user story 2.2, which involv
 ### Post-Sprint Project Board
 
 ![](readme_images/sprint5_postsprint.png)
+
+## Sprint 6 17/05/2021
+
+### Goals
+
+- [ ] Plan for and practice presentation
+- [ ] Fix bug with adding new table in Edit Random Encounters page. 
+- [ ] Implement the hard version of editing random encounters
+- [x] Presentation dry run 2
+- [ ] Presentation dry run 3
+- [x] Add dummy data
+- [ ] Add ability to change the random encounter table associated with a province
+- [ ] Add info to README.md for developers
+- [ ] Create readme for users
+- [x] Update class diagram for database model
+- [x] Upload image of class diagram for database model to README.md
+
+### Pre-Sprint Project Board
+
+![](readme_images/sprint6_presprint.png)
+
+### Sprint Review
+
+### Sprint Retrospective
+
+### Post-Sprint Project Board
+
