@@ -20,7 +20,8 @@ namespace DnDCampaignManagerWPF
     /// </summary>
     public partial class DMMapView : Window
     {
-        ProvinceManager _provinceManager = new ProvinceManager();
+        private ProvinceManager _provinceManager = new ProvinceManager();
+        private RandomEncounterManager _randomEncounterManager = new RandomEncounterManager();
         public DMMapView()
         {
             InitializeComponent();
@@ -92,6 +93,7 @@ namespace DnDCampaignManagerWPF
             ProvinceHiddenFeatureBox.Text = _provinceManager.GetProvinceHiddenFeature(button.Name);
             ProvinceTravelSpeedBox.Content = _provinceManager.GetProvinceTravelSpeed(button.Name);
             RandomEncounterResultBox.Text = "";
+            
             //ProvincesDropDown.ItemsSource = _provinceManager.GetAllProvincesQuery();
         }
 
@@ -124,7 +126,7 @@ namespace DnDCampaignManagerWPF
         {
             EditRandomEncounters editRandomEncounters = new EditRandomEncounters();
             editRandomEncounters.Show();
-
         }
+
     }
 }

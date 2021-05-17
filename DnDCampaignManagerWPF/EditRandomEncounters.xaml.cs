@@ -89,6 +89,7 @@ namespace DnDCampaignManagerWPF
             SaveTableButton.IsEnabled = true;
             EditTableButton.IsEnabled = false;
             DeleteTableButton.IsEnabled = false;
+            _randomEncounterManager.SelectedEncounterTable = null;
 
         }
 
@@ -104,7 +105,7 @@ namespace DnDCampaignManagerWPF
             SaveTableButton.IsEnabled = false;
             EditTableButton.IsEnabled = false;
             DeleteTableButton.IsEnabled = false;
-
+            GenerateListOfEncounters();
         }
     }
 }
