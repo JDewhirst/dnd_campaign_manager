@@ -152,8 +152,30 @@ namespace CampaignManagerData
                         TerrainId = "Forest",
                         RandEncounterTableId = "Creepy Wood"
                     },
-
-
+                new Province()
+                    {
+                        Coordinates = 7,
+                        ObviousFeature = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed pulvinar proin gravida hendrerit lectus. Blandit massa enim nec dui nunc mattis enim ut tellus. Tristique senectus et netus et malesuada fames. Lacus viverra vitae congue eu consequat. Viverra vitae congue eu consequat. Enim lobortis scelerisque fermentum dui faucibus. Blandit libero volutpat sed cras ornare. Amet dictum sit amet justo donec enim diam vulputate. Fusce ut placerat orci nulla. Nunc lobortis mattis aliquam faucibus purus. Auctor urna nunc id cursus metus aliquam. Interdum posuere lorem ipsum dolor sit. Odio ut enim blandit volutpat maecenas volutpat.",
+                        HiddenFeature = "Settlement of giants",
+                        ProvinceName = "BigMount",
+                        TerrainId = "Mountain",
+                    },
+                new Province()
+                    {
+                        Coordinates = 8,
+                        ObviousFeature = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed pulvinar proin gravida hendrerit lectus. Blandit massa enim nec dui nunc mattis enim ut tellus. Tristique senectus et netus et malesuada fames. Lacus viverra vitae congue eu consequat. Viverra vitae congue eu consequat. Enim lobortis scelerisque fermentum dui faucibus. Blandit libero volutpat sed cras ornare. Amet dictum sit amet justo donec enim diam vulputate. Fusce ut placerat orci nulla. Nunc lobortis mattis aliquam faucibus purus. Auctor urna nunc id cursus metus aliquam. Interdum posuere lorem ipsum dolor sit. Odio ut enim blandit volutpat maecenas volutpat.",
+                        HiddenFeature = "",
+                        ProvinceName = "SmallMount",
+                        TerrainId = "Mountain",
+                    },
+                new Province()
+                    {
+                        Coordinates = 9,
+                        ObviousFeature = "Maurading band of Goblins, one for each colour of the rainbow",
+                        HiddenFeature = "Pot of gold at the end of the rainbow",
+                        ProvinceName = "RainbowValley",
+                        TerrainId = "Hill",
+                    },
 
         };
 

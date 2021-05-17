@@ -15,7 +15,7 @@
 
         <ListBox x:Name="EncounterTablesListBox" Grid.Column="0" Margin="37,44,29,44"></ListBox>
         <Button x:Name="SelectEncounterTable" Grid.Column="1" Content="Select Table" Click="SelectEncounterButton" Margin="0,138,10,249"/>
-        <Button x:Name="AddNewTableButton" Grid.Column="1" Content="Add New Table" Click="EditTableButton_Click" Margin="0,194,10,193"/>
+        <Button x:Name="AddNewTableButton" Grid.Column="1" Content="Add New Table" Click="AddNewTableButton_Click" Margin="0,194,10,193"/>
 
         <Grid Grid.Column="2">
             <Grid.ColumnDefinitions>
