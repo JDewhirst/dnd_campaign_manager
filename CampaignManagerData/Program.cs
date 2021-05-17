@@ -9,22 +9,10 @@ namespace CampaignManagerData
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            //GenerateTerrainDetails();
-            //GenerateProvinces();
-            //using (var db = new DnDCampaignManagerContext())
-            //{
-            //    var pQuery = db.Provinces.ToList();
-            //    pQuery.ForEach(p => Console.WriteLine(p.ProvinceName));
-            //}
-            //GenerateRandomEncounters();
 
-            //var test = @"{  
-            //'FirstName':'Olivia',  
-            //'LastName':'Mason'}";
-            //Console.WriteLine(test);
-            //var test2 = JObject.Parse(test);
-            //Console.WriteLine(test2["FirstName"]);
+            //GenerateTerrainDetails();
+            GenerateRandomEncounters();
+            GenerateProvinces();
             
                
         }
@@ -84,6 +72,23 @@ namespace CampaignManagerData
             }
         }
 
+        public static void GenerateRandomEncounters()
+        {
+            List<RandomEncounter> randomEncounters = new List<RandomEncounter>()
+            { 
+                new RandomEncounter(){RandEncounterTableId = "Creepy Wood", Dice = "2d4", RandEncounter = @"{ '2':'Gang of Goblins', '3':'Bandits', '4':'Wolves', '5':'Bandits', '6':'Bandits', '7':'Bandits', '8':'Will o the Wisp' }"},
+                new RandomEncounter(){RandEncounterTableId = "Boring Plain", Dice = "1d6", RandEncounter = @"{ '1':'Herd of Auroch', '2':'Band of Knights', '3':'Merchant Caravan', '4':'Razorgrass', '5':'Orcish raiders', '6':'Bandits'}"},
+                new RandomEncounter(){RandEncounterTableId = "Town", Dice = "1d4", RandEncounter = @"{ '1':'Giant Rat', '2':'Pickpocket', '3':'Guards', '4':'Priest' }"}
+            };
+            
+            using (var db = new DnDCampaignManagerContext())
+            {
+                randomEncounters.ForEach(re => db.RandomEncounters.Add(re));
+                db.SaveChanges();
+            }
+
+        }
+
         public static void GenerateProvinces()
         {
             List<Province> provinceList = new List<Province>
@@ -94,7 +99,7 @@ namespace CampaignManagerData
                         ObviousFeature = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed pulvinar proin gravida hendrerit lectus. Blandit massa enim nec dui nunc mattis enim ut tellus. Tristique senectus et netus et malesuada fames. Lacus viverra vitae congue eu consequat. Viverra vitae congue eu consequat. Enim lobortis scelerisque fermentum dui faucibus. Blandit libero volutpat sed cras ornare. Amet dictum sit amet justo donec enim diam vulputate. Fusce ut placerat orci nulla. Nunc lobortis mattis aliquam faucibus purus. Auctor urna nunc id cursus metus aliquam. Interdum posuere lorem ipsum dolor sit. Odio ut enim blandit volutpat maecenas volutpat.",
                         HiddenFeature = "Borderers Raiding encampment",
                         ProvinceName = "Northumberland",
-                        TerrainId = "Hill" 
+                        TerrainId = "Hill"
                     },
                 new Province()
                     {
@@ -110,7 +115,8 @@ namespace CampaignManagerData
                         ObviousFeature = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed pulvinar proin gravida hendrerit lectus. Blandit massa enim nec dui nunc mattis enim ut tellus. Tristique senectus et netus et malesuada fames. Lacus viverra vitae congue eu consequat. Viverra vitae congue eu consequat. Enim lobortis scelerisque fermentum dui faucibus. Blandit libero volutpat sed cras ornare. Amet dictum sit amet justo donec enim diam vulputate. Fusce ut placerat orci nulla. Nunc lobortis mattis aliquam faucibus purus. Auctor urna nunc id cursus metus aliquam. Interdum posuere lorem ipsum dolor sit. Odio ut enim blandit volutpat maecenas volutpat.",
                         HiddenFeature = "The ancient crown of the east saxons is kept under heavy guard in the treasury of Sir Ralph fitz Morgan",
                         ProvinceName = "Kent",
-                        TerrainId = "Plain"
+                        TerrainId = "Plain",
+                        RandEncounterTableId = "Boring Plain"
                     },
                 new Province()
                     {
@@ -120,11 +126,38 @@ namespace CampaignManagerData
                         ProvinceName = "Cumbria",
                         TerrainId = "Mountain"
                     },
+                new Province()
+                    {
+                        Coordinates = 4,
+                        ObviousFeature = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed pulvinar proin gravida hendrerit lectus. Blandit massa enim nec dui nunc mattis enim ut tellus. Tristique senectus et netus et malesuada fames. Lacus viverra vitae congue eu consequat. Viverra vitae congue eu consequat. Enim lobortis scelerisque fermentum dui faucibus. Blandit libero volutpat sed cras ornare. Amet dictum sit amet justo donec enim diam vulputate. Fusce ut placerat orci nulla. Nunc lobortis mattis aliquam faucibus purus. Auctor urna nunc id cursus metus aliquam. Interdum posuere lorem ipsum dolor sit. Odio ut enim blandit volutpat maecenas volutpat.",
+                        HiddenFeature = "Hidden shrine to Asmodeus in the mausoleum",
+                        ProvinceName = "Oxford",
+                        TerrainId = "Urban",
+                        RandEncounterTableId = "Town"
+                    },
+                new Province()
+                    {
+                        Coordinates = 5,
+                        ObviousFeature = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed pulvinar proin gravida hendrerit lectus. Blandit massa enim nec dui nunc mattis enim ut tellus. Tristique senectus et netus et malesuada fames. Lacus viverra vitae congue eu consequat. Viverra vitae congue eu consequat. Enim lobortis scelerisque fermentum dui faucibus. Blandit libero volutpat sed cras ornare. Amet dictum sit amet justo donec enim diam vulputate. Fusce ut placerat orci nulla. Nunc lobortis mattis aliquam faucibus purus. Auctor urna nunc id cursus metus aliquam. Interdum posuere lorem ipsum dolor sit. Odio ut enim blandit volutpat maecenas volutpat.",
+                        HiddenFeature = "Fairy Ring which leads to the realm of Springheel Jack",
+                        ProvinceName = "BlackForest",
+                        TerrainId = "Forest",
+                        RandEncounterTableId = "Creepy Wood"
+                    },
+                new Province()
+                    {
+                        Coordinates = 6,
+                        ObviousFeature = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed pulvinar proin gravida hendrerit lectus. Blandit massa enim nec dui nunc mattis enim ut tellus. Tristique senectus et netus et malesuada fames. Lacus viverra vitae congue eu consequat. Viverra vitae congue eu consequat. Enim lobortis scelerisque fermentum dui faucibus. Blandit libero volutpat sed cras ornare. Amet dictum sit amet justo donec enim diam vulputate. Fusce ut placerat orci nulla. Nunc lobortis mattis aliquam faucibus purus. Auctor urna nunc id cursus metus aliquam. Interdum posuere lorem ipsum dolor sit. Odio ut enim blandit volutpat maecenas volutpat.",
+                        HiddenFeature = "Hag coven",
+                        ProvinceName = "RedForest",
+                        TerrainId = "Forest",
+                        RandEncounterTableId = "Creepy Wood"
+                    },
 
 
 
         };
-            
+
             using (var db = new DnDCampaignManagerContext())
             {
                 provinceList.ForEach(p => db.Provinces.Add(p));
@@ -132,20 +165,5 @@ namespace CampaignManagerData
             }
         }
 
-        public static void GenerateRandomEncounters()
-        {
-            List<RandomEncounter> randomEncounters = new List<RandomEncounter>()
-            { 
-                new RandomEncounter(){RandEncounterTableId = "Creepy Wood", Dice = "2d4", RandEncounter = @"{ '2':'goblin', '3':'bandits', '4':'wolves', '5':'bandits', '6':'bandits', '7':'bandits', '8':'Will 'o the Wisp' }"},
-                new RandomEncounter(){RandEncounterTableId = "Boring Plain", Dice = "1d6", RandEncounter = @"{ '1':'Auroch', '2':'Knights', '3':'Merhant Caravan', '4':'Razorgrass', '5':'Orcish raiders', '6':'Bandits'}"}
-            };
-            
-            using (var db = new DnDCampaignManagerContext())
-            {
-                randomEncounters.ForEach(re => db.RandomEncounters.Add(re));
-                db.SaveChanges();
-            }
-
-        }
     }
 }
