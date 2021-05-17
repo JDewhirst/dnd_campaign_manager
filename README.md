@@ -2,7 +2,37 @@
 
 Repository for an app that displays a map of a role-playing game world and automates common features of [hexcrawl](https://www.runagame.net/2014/03/the-hex-crawl.html) or sandbox table-top gameplay style such as; rolling for random encounters, finding travel times between locations. As well as storing information about locations on the map and allowing the dungeon master to edit that information to customize it for their own game and update it as the game progresses. 
 
-Using; C#, WPF, SQL, Microsoft Entity Framework
+## Project Setup
+
+This project uses C# in visual studio 2019, WPF, the NUnit, NUnit3TestAdapter, and Microsoft.NET.Test.Sdk, NuGet packages. As well as the Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.SqlServer, and Microsoft.EntityFrameworkCore.Tools, NuGet packages.
+
+### NuGet Packages
+
+After downloading the solution you must install the required NuGet packages for each project
+
+There are four projects in the solution
+
+* CampaignManagerData which contains the database model and requires the Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.SqlServer, and Microsoft.EntityFrameworkCore.Tools, NuGet packages.
+* DnDCampaignManagerApp which contains CRUD functions for interacting with the database, no NuGet packages
+* DnDCampaignManagerWPF which is a WPF project implementing the GUI, no NuGet packages
+* DnDCampaignManagerTests which contains the unit tests for the DnDCampaignManagerApp project. Requires the NUnit, NUnit3TestAdapter, and Microsoft.NET.Test.Sdk NuGet packages.
+
+### Dependencies
+
+Some of these projects have eachother as dependencies. On each project right-click the dependencies and select  `Add project reference`. Ensure that each project has the correct dependencies. 
+
+* CampaignManagerData; No dependencies
+* DnDCampaignManagerApp; CampaginManagerData
+* DnDCampaignManagerTests; DnDCampaignManagerApp
+* DnDCampaignManagerWPF; DnDCampaignManagerApp
+
+### Model First Database Approach
+
+This project also depends on a database. Once you have installed the NuGet packages you can construct this database using EntityFramework.
+
+<- Information here ->
+
+Once the database has been constructed you may populate it with some dummy data using the functions in ``/CampaignManagerData/Program.cs` Note that the provinces table has foreign keys for the other tables, if you wish to include those foreign keys in an entry in provinces you must ensure that the corresponding entry exists in the other tables.
 
 ## Definition Of Done
 
