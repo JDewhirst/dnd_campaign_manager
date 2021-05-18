@@ -46,6 +46,17 @@ namespace DnDCampaignManagerTests
         }
 
         // Read
+        [Test]
+        public void GetListOfRandomEncounterTables_ReturnsListLengthEqualToNumberofEntries()
+        {
+            var result = _randomEncounterManager.GetListOfRandomEncounterTables().Count;
+            int expected;
+            using (var db = new DnDCampaignManagerContext())
+            {
+                expected = db.RandomEncounters.Count();
+            }
+            Assert.AreEqual(expected, result);
+        }
 
         // Update
 
