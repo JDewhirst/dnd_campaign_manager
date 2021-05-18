@@ -123,8 +123,17 @@ namespace DnDCampaignManagerWPF
 
         private void SelectRandomEncounterTable_Button_Click(object sender, RoutedEventArgs e)
         {
+            RandomEncountersList.ItemsSource = _randomEncounterManager.GetListOfRandomEncounterTables();
+            SelectRandomEncounterTable_Popup.IsOpen = true;
 
+        }
 
+        private void SaveProvinceRandomEncounterTable_Click(object sender, RoutedEventArgs e)
+        {
+            
+            _provinceManager.SetRandomEncounterTable(_provinceManager.SelectedProvince.ProvinceName, RandomEncountersList.SelectedItem.ToString());
+            ProvinceRandomEncounterTable_Box.Text = _provinceManager.GetProvinceRandomEncounterDetails(ProvinceNameBox.Content.ToString())[0].ToString();
+            SelectRandomEncounterTable_Popup.IsOpen = false;
         }
     }
 }

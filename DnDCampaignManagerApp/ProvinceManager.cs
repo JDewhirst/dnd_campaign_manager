@@ -109,6 +109,16 @@ namespace DnDCampaignManagerApp
             
         }
 
+        public void SetRandomEncounterTable(string provinceName, string tableId)
+        {
+            using (var db = new DnDCampaignManagerContext())
+            {
+                SelectedProvince = db.Provinces.Where(p => p.ProvinceName == provinceName).FirstOrDefault();
+                SelectedProvince.RandEncounterTableId = tableId;
+                db.SaveChanges();
+            }
+        }
+
 
     }
 }

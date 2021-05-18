@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:DnDCampaignManagerWPF"
         mc:Ignorable="d"
         Title="DMMapView" Height="450" Width="800">
-    
+
+
     <Grid Name="gridMain" ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -67,7 +68,23 @@
             <TextBox x:Name="RandomEncounterResultBox" Grid.Row="7" Grid.Column="1" Text="Click to roll a random encounter" TextWrapping="Wrap" VerticalContentAlignment="Center" IsEnabled="False"></TextBox>
             
             <Button x:Name="SelectRandomEncounterTable_Button" Grid.Row="8" Grid.ColumnSpan="2" Content="Select Random Encounter Table" Click="SelectRandomEncounterTable_Button_Click"></Button>
-            
+            <Popup Name="SelectRandomEncounterTable_Popup"
+               Placement="Right"
+               AllowsTransparency="False">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ListView x:Name="RandomEncountersList"></ListView>
+                    <Button x:Name="SaveProvinceRandomEncounterTable_Button" Click="SaveProvinceRandomEncounterTable_Click" Grid.Row="1">Select Table</Button>
+                </Grid>
+            </Popup>
+
+
             <Button x:Name="EditRandomEncounters_Button" Content="Edit Random Encounter Tables" Grid.ColumnSpan="2"  Grid.Row="9" Click="EditRandomEncounters_Button_Click"></Button>
             
         </Grid>
