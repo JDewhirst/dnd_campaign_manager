@@ -1,4 +1,4 @@
-# D&D Campaign Manager
+# FD&D Campaign Manager
 
 Repository for an app that displays a map of a role-playing game world and automates common features of [hexcrawl](https://www.runagame.net/2014/03/the-hex-crawl.html) or sandbox table-top gameplay style such as; rolling for random encounters, finding travel times between locations. As well as storing information about locations on the map and allowing the dungeon master to edit that information to customize it for their own game and update it as the game progresses. 
 
@@ -205,7 +205,7 @@ I implemented the minimal viable product version of user story 2.2, which involv
 
 ### Sprint Review
 
-Completed all tasks related to preperation for the presentation tomorrow, as well as adding some dummy data to the database. Did not complete the work related to the editing random encounters feature.
+Completed all tasks related to preparation for the presentation tomorrow, as well as adding some dummy data to the database. Did not complete the work related to the editing random encounters feature.
 
 ### Sprint Retrospective
 
@@ -216,3 +216,18 @@ In retrospect my full list of sprint goals today was more of a wishlist than a s
 ### Post-Sprint Project Board
 
 ![](readme_images/sprint6_postsprint.png)
+
+## Sprint 7 18/05/2021
+
+### Goals
+
+- [x] Final presentation
+- [ ] Create readme info for users
+- [ ] Check all unit tests
+- [ ] Implement more unit tests
+- [ ] Review all code and clean up where necessary
+
+### Pre-Sprint Project Board
+
+![](readme_images/sprint7_presprint.png)
+
