@@ -25,10 +25,21 @@ namespace DnDCampaignManagerApp
         }
 
         // Update
-        public void UpdateTable(string tableId, string newTableId, string dice, string table)
+        public void UpdateTable(string tableId, string newTableId, string dice, string encounterTable)
         {
             Delete(tableId);
-            CreateTable(newTableId, dice, table);
+            CreateTable(newTableId, dice, encounterTable);
+        }
+
+        public void UpdateTable(string tableId, string dice, string encounterTable)
+        {
+            using (var db = new DnDCampaignManagerContext())
+            {
+                var selectedTable = db.RandomEncounters.Where(re => re.RandEncounterTableId == tableId).FirstOrDefault();
+                selectedTable.Dice = dice;
+                selectedTable.RandEncounter = encounterTable;
+                db.SaveChanges();
+            }
         }
 
         // Read

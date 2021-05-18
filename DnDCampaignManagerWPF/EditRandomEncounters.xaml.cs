@@ -35,7 +35,7 @@ namespace DnDCampaignManagerWPF
 
         private void EditTableButton_Click(object sender, RoutedEventArgs e)
         {
-            EncounterTableNameTextBox.IsEnabled = true;
+            EncounterTableNameTextBox.IsEnabled = false;
             EncounterTableDiceTextBox.IsEnabled = true;
             EncounterTableTableTextBox.IsEnabled = true;
             SaveTableButton.IsEnabled = true;
@@ -54,7 +54,7 @@ namespace DnDCampaignManagerWPF
 
             if (_randomEncounterManager.SelectedEncounterTable is not null)
             {
-                _randomEncounterManager.UpdateTable(_randomEncounterManager.SelectedEncounterTable.RandEncounterTableId, EncounterTableNameTextBox.Text, EncounterTableDiceTextBox.Text, EncounterTableTableTextBox.Text);
+                _randomEncounterManager.UpdateTable(_randomEncounterManager.SelectedEncounterTable.RandEncounterTableId, EncounterTableDiceTextBox.Text, EncounterTableTableTextBox.Text);
             }
             else
             {

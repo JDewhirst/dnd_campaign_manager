@@ -47,7 +47,7 @@ namespace DnDCampaignManagerTests
                 db.RandomEncounters.Add(newTable);
                 db.SaveChanges();
             }
-            _randomEncounterManager.UpdateTable("Olympus Mons", "Olympus Mons", "1d2", @"{ '1':'Flying Monkey', '2':'Jumping Man' }");
+            _randomEncounterManager.UpdateTable("Olympus Mons", "1d2", @"{ '1':'Flying Monkey', '2':'Jumping Man' }");
             string result;
             using (var db = new DnDCampaignManagerContext())
             {
@@ -65,13 +65,13 @@ namespace DnDCampaignManagerTests
                 db.RandomEncounters.Add(newTable);
                 db.SaveChanges();
             }
-            _randomEncounterManager.UpdateTable("Olympus Mons", "Olympus Mons", "1d2", @"{ '1':'Flying Monkey', '2':'Jumping Man' }");
+            _randomEncounterManager.UpdateTable("Olympus Mons", "1d2", @"{ '1':'Flying Monkey', '2':'Jumping Man' }");
             string result;
             using (var db = new DnDCampaignManagerContext())
             {
-                result = db.RandomEncounters.Where(p => p.RandEncounterTableId == "Olympus Mons").FirstOrDefault().RandEncounter;
+                result = db.RandomEncounters.Where(p => p.RandEncounterTableId == "Olympus Mons").FirstOrDefault().Dice;
             }
-            Assert.AreEqual(@"{ '1':'Flying Monkey', '2':'Jumping Man' }", result);
+            Assert.AreEqual("1d2", result);
         }
 
         // Delete
