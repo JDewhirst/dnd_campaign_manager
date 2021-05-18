@@ -130,10 +130,16 @@ namespace DnDCampaignManagerWPF
 
         private void SaveProvinceRandomEncounterTable_Click(object sender, RoutedEventArgs e)
         {
-            
-            _provinceManager.SetRandomEncounterTable(_provinceManager.SelectedProvince.ProvinceName, RandomEncountersList.SelectedItem.ToString());
-            ProvinceRandomEncounterTable_Box.Text = _provinceManager.GetProvinceRandomEncounterDetails(ProvinceNameBox.Content.ToString())[0].ToString();
-            SelectRandomEncounterTable_Popup.IsOpen = false;
+            if (RandomEncountersList.SelectedItem == null || _provinceManager.SelectedProvince == null)
+            {
+                SelectRandomEncounterTable_Popup.IsOpen = false;
+            }
+            else
+            {
+                _provinceManager.SetRandomEncounterTable(_provinceManager.SelectedProvince.ProvinceName, RandomEncountersList.SelectedItem.ToString());
+                ProvinceRandomEncounterTable_Box.Text = _provinceManager.GetProvinceRandomEncounterDetails(ProvinceNameBox.Content.ToString())[0].ToString();
+                SelectRandomEncounterTable_Popup.IsOpen = false;
+            }
         }
     }
 }

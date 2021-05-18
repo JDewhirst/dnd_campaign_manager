@@ -10,9 +10,9 @@
 
     <Grid Name="gridMain" ShowGridLines="False">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition MaxWidth="265"></ColumnDefinition>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition MaxWidth="265"/>
         </Grid.ColumnDefinitions>
         
         <Grid Name="gridMap" Grid.ColumnSpan="2">
@@ -35,7 +35,7 @@
         <Grid Name="gridInfo" Grid.Column="2" Grid.ColumnSpan="1" Background="Wheat">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
@@ -46,8 +46,8 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Label x:Name="ProvinceNameBox" Grid.Row="0" Grid.ColumnSpan="2" FontStyle="Oblique" FontSize="24" Content="Province Name" IsEnabled="False"></Label>
@@ -61,7 +61,7 @@
             <Button x:Name="EditProvinceInformation_Button" Grid.Row="5" Content="Edit Province Features" Click="EditProvinceInformation_Button_Click"></Button>
             <Button x:Name="SaveProvinceInformation_Button" Grid.Row="5" Grid.Column="1" Content="Save" Click="SaveProvinceInformation_Button_Click" IsEnabled="False"></Button>
 
-            <Label x:Name="RandomEncounterTable_Label" Content="Random Encounter Table:" Grid.Row="6" Grid.Column="0"></Label>
+            <Label x:Name="RandomEncounterTable_Label" Content="Random Encounter Table:" Grid.Row="6" Grid.Column="0" ></Label>
             <TextBox x:Name="ProvinceRandomEncounterTable_Box" Grid.Row="6" Grid.Column="1" IsEnabled="False" ></TextBox>
             
             <Button x:Name="RollRandomEncounter_Button" Grid.Row="7"  Content="Roll Random Encounter" Click="RollRandomEncounter_Button_Click"></Button>
@@ -70,6 +70,7 @@
             <Button x:Name="SelectRandomEncounterTable_Button" Grid.Row="8" Grid.ColumnSpan="2" Content="Select Random Encounter Table" Click="SelectRandomEncounterTable_Button_Click"></Button>
             <Popup Name="SelectRandomEncounterTable_Popup"
                Placement="Right"
+               VerticalOffset="100"
                AllowsTransparency="False">
                 <Grid>
                     <Grid.ColumnDefinitions>
