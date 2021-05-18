@@ -25,11 +25,6 @@ namespace DnDCampaignManagerApp
         }
 
         // Update
-        public void UpdateTable(string tableId, string newTableId, string dice, string encounterTable)
-        {
-            Delete(tableId);
-            CreateTable(newTableId, dice, encounterTable);
-        }
 
         public void UpdateTable(string tableId, string dice, string encounterTable)
         {
@@ -75,7 +70,7 @@ namespace DnDCampaignManagerApp
                 var provinces = db.Provinces.Where(p => p.RandEncounterTableId == tableId).ToList();
                 provinces.ForEach(p => p.RandEncounterTableId = null);
                 
-                // delete table
+                // delete this entry
                 var tableToDelete = db.RandomEncounters.Where(re => re.RandEncounterTableId == tableId).FirstOrDefault();
                 db.RandomEncounters.RemoveRange(tableToDelete);
                 db.SaveChanges();

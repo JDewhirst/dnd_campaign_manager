@@ -8,7 +8,8 @@ namespace CampaignManagerData
     {
         static void Main(string[] args)
         {
-
+            /// These functions populate the database, you must run GenerateTerrainDetails and GenerateRandomEncounters
+            /// prior to GenerateProvinces, since the provinces include foreign keys that reference TerrainDetails and RandomEncounters
             //GenerateTerrainDetails();
             GenerateRandomEncounters();
             GenerateProvinces();

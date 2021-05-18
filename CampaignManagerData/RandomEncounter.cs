@@ -20,7 +20,7 @@ namespace CampaignManagerData
 
         public override string ToString()
         {
-            return $"{RandEncounterTableId}";
+            return RandEncounterTableId;
         }
     }
 }

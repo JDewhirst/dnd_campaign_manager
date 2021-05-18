@@ -1,15 +1,22 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DnDCampaignManagerApp
 {
     public static class DiceRoller
     {
         private static Random r = new Random();
+
+
+        // Takes a string of the form "XdY" where X and Y are integers representing the number of dice and size of the dice respectively
+        public static Tuple<int, int> ParseDice(string dice)
+        {
+            int numDice = Convert.ToInt32(dice.Split('d')[0]);
+            int diceType = Convert.ToInt32(dice.Split('d')[1]);
+            Tuple<int, int> result = new Tuple<int, int>(numDice, diceType);
+            return result;
+        }
 
         public static string RollDice(string dice)
         {
@@ -22,14 +29,6 @@ namespace DnDCampaignManagerApp
                 result += r.Next(1, dieSize);
             }
             return result.ToString();
-        }
-
-        public static Tuple<int, int> ParseDice(string dice)
-        {
-            int numDice = Convert.ToInt32(dice.Split('d')[0]);
-            int diceType = Convert.ToInt32(dice.Split('d')[1]);
-            Tuple<int, int> result = new Tuple<int, int>(numDice, diceType);
-            return result;
         }
 
         public static string RollEncounter(List<object> randomEncounterDetails)
