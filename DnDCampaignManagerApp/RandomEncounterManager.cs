@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CampaignManagerData;
 using Newtonsoft.Json.Linq;
+using static DnDCampaignManagerApp.Exceptions;
 
 namespace DnDCampaignManagerApp
 {
@@ -14,9 +16,21 @@ namespace DnDCampaignManagerApp
             SelectedEncounterTable = (RandomEncounter)selectedItem;
         }
 
+        private void CheckDiceFormat(string dice)
+        {
+            var splitDice = dice.Split("d");
+            if (splitDice.Count() != 2 || splitDice.Contains("0"))
+            {
+                throw new IncorrectDiceException();
+            }
+
+        }
+
         // Create 
         public void CreateTable(string tableId, string dice, string table)
         {
+
+            CheckDiceFormat(dice);
             using (var db = new DnDCampaignManagerContext())
             {
                 db.RandomEncounters.Add(new RandomEncounter() { RandEncounterTableId = tableId, Dice = dice, RandEncounter = table });
@@ -28,6 +42,7 @@ namespace DnDCampaignManagerApp
 
         public void UpdateTable(string tableId, string dice, string encounterTable)
         {
+            CheckDiceFormat(dice);
             using (var db = new DnDCampaignManagerContext())
             {
                 var selectedTable = db.RandomEncounters.Where(re => re.RandEncounterTableId == tableId).FirstOrDefault();

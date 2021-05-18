@@ -16,11 +16,6 @@ namespace DnDCampaignManagerTests
             Assert.AreEqual(expected, result.Item2);
         }
 
-        [Test]
-        public void WhenAttemptToParseIncorrectDiceThrowException()
-        {
-            Assert.Fail();
-        }
 
         [TestCase("6d6", 6)]
         [TestCase("2147483647d4", 2147483647)]

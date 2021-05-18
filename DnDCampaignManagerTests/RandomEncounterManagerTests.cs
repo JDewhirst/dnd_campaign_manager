@@ -2,6 +2,9 @@
 using NUnit.Framework;
 using DnDCampaignManagerApp;
 using CampaignManagerData;
+using static DnDCampaignManagerApp.Exceptions;
+
+
 
 namespace DnDCampaignManagerTests
 {
@@ -19,6 +22,14 @@ namespace DnDCampaignManagerTests
                 db.RandomEncounters.RemoveRange(selectedTables);
                 db.SaveChanges();
             }
+        }
+
+        [TestCase("1d0")]
+        [TestCase("0d1")]
+        [TestCase("999")]
+        public void WhenAttemptToCreateTableWithIncorrectDiceThrowException(string input)
+        {
+            Assert.Throws<IncorrectDiceException>(() => _randomEncounterManager.CreateTable("Olympus Mons", input, @"{ '1':'Flying Monkey' }") );
         }
         // Create
 
