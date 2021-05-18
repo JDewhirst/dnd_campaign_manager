@@ -222,12 +222,23 @@ In retrospect my full list of sprint goals today was more of a wishlist than a s
 ### Goals
 
 - [x] Final presentation
-- [ ] Create readme info for users
-- [ ] Check all unit tests
-- [ ] Implement more unit tests
-- [ ] Review all code and clean up where necessary
+- [x] Create readme info for users
+- [x] Check all unit tests
+- [x] Implement more unit tests
+- [x] Review all code and clean up where necessary
 
 ### Pre-Sprint Project Board
 
 ![](readme_images/sprint7_presprint.png)
 
+### Sprint Review
+
+Gave the final presentation, went over unit tests, implemented more unit tests including for added functionality to check dice strings for correct formatting when updating or creating random encounter table entries. Altered the RandomEncounterManager.UpdateTable() function to not require deleting and recreating database entry. Added functionality to change the random encounter table associated with a province from the DM Map View. Created a user readme.
+
+### Sprint Retrospective
+
+Got several tasks done on top of all of todays sprint goals, mainly the functionality related to changing random encounters. 
+
+### Post-Sprint Project Board
+
+![](readme_images/sprint7_postsprint.png)
