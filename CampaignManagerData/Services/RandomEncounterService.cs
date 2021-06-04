@@ -34,5 +34,15 @@ namespace CampaignManagerData
         {
             return _context.RandomEncounters.Where(re => re.RandEncounterTableId == tableId).FirstOrDefault();
         }
+
+        public void SaveRandEncounterChanges()
+        {
+            _context.SaveChanges();
+        }
+
+        public List<RandomEncounter> GetRandomEncountersList()
+        {
+            return _context.RandomEncounters.ToList();
+        }
     }
 }

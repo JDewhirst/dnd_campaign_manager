@@ -14,5 +14,8 @@ namespace CampaignManagerData
 
         public RandomEncounter GetTableById(string tableId);
 
+        public void SaveRandEncounterChanges();
+
+        public List<RandomEncounter> GetRandomEncountersList();
     }
 }
