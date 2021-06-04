@@ -40,7 +40,13 @@ namespace DnDCampaignManagerApp
 
         public void CreateTerrain(string terrainId, string terrainDescription, int travelSpeed)
         {
-            _service.CreateTerrain(terrainId, terrainDescription, travelSpeed);
+            var newTerrain = new TerrainDetail
+            {
+                TerrainId = terrainId,
+                TerrainDescription = terrainDescription,
+                TerrainTravelSpeed = travelSpeed
+            };
+            _service.CreateTerrain(newTerrain);
         }
     }
 }

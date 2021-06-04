@@ -28,17 +28,10 @@ namespace CampaignManagerData
             return _context.TerrainDetails.Where(td => td.TerrainId == terrainId).FirstOrDefault().TerrainTravelSpeed;
         }
 
-        public void CreateTerrain(string terrainId, string terrainDescription, int travelSpeed)
+        public void CreateTerrain(TerrainDetail newTerrain)
         {
-            var newTerrain = new TerrainDetail
-            {
-                TerrainId = terrainId,
-                TerrainDescription = terrainDescription,
-                TerrainTravelSpeed = travelSpeed
-            };
             _context.TerrainDetails.Add(newTerrain);
             _context.SaveChanges();
-
         }
     }
 }

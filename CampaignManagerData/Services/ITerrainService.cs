@@ -12,6 +12,6 @@ namespace CampaignManagerData
 
         public int GetTerrainSpeed(string terrainId);
 
-        public void CreateTerrain(string terrainId, string terrainDescription, int travelSpeed);
+        public void CreateTerrain(TerrainDetail newTerrain);
     }
 }

@@ -19,7 +19,7 @@ namespace DnDCampaignManagerTests
             _context = new DnDCampaignManagerContext(options);
             _sut = new ProvinceService(_context);
 
-            // Add things to in memory database, if necessary
+            // Add things to in memory database
             _sut.CreateProvince(new Province() { Coordinates = 0, ProvinceName = "Wyrmsley" });
             _sut.CreateProvince(new Province() { Coordinates = 1, ProvinceName = "Hellington" });
         }
@@ -31,7 +31,7 @@ namespace DnDCampaignManagerTests
             var newProvince = new Province { Coordinates = 3, ProvinceName = "Boston" };
             _sut.CreateProvince(newProvince);
             var numOfCustomersPost = _context.Provinces.Count();
-            Assert.That(numOfCustomersPost, Is.EqualTo(numOfCustomersPost));
+            Assert.That(numOfCustomersPrior, Is.EqualTo(numOfCustomersPost - 1));
             var result = _sut.GetProvinceByName("Boston");
             Assert.That(result.Coordinates, Is.EqualTo(3));
             Assert.That(result.ProvinceName, Is.EqualTo("Boston"));
