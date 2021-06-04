@@ -9,7 +9,6 @@ namespace DnDCampaignManagerApp
     public class ProvinceManager
     {
         public Province SelectedProvince { get; set; }
-        private TerrainManager _terrainManager = new TerrainManager();
         private RandomEncounterManager _randomEncounterManager = new RandomEncounterManager();
 
         public void SetSelectedProvince(object selectedItem)

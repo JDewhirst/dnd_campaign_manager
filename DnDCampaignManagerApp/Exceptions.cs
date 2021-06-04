@@ -2,17 +2,13 @@
 
 namespace DnDCampaignManagerApp
 {
-    public class Exceptions
+    public class IncorrectDiceException : Exception
     {
-        public class IncorrectDiceException : Exception
+        public override string Message
         {
-            //Overriding the Message property
-            public override string Message
+            get
             {
-                get
-                {
-                    return "Dice must be in the format 'XdY', X and Y must be positive integers and not zero";
-                }
+                return "Dice must be in the format 'XdY', X and Y must be positive integers and not zero";
             }
         }
     }

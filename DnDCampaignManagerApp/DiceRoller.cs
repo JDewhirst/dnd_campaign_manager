@@ -8,14 +8,13 @@ namespace DnDCampaignManagerApp
     {
         private static Random r = new Random();
 
-
         // Takes a string of the form "XdY" where X and Y are integers representing the number of dice and size of the dice respectively
         public static Tuple<int, int> ParseDice(string dice)
         {
-            int numDice = Convert.ToInt32(dice.Split('d')[0]);
-            int diceType = Convert.ToInt32(dice.Split('d')[1]);
-            Tuple<int, int> result = new Tuple<int, int>(numDice, diceType);
-            return result;
+            var split = dice.Split('d');
+            int numDice = int.Parse(split[0]);
+            int diceType = int.Parse(split[1]);
+            return new Tuple<int, int>(numDice, diceType);
         }
 
         public static string RollDice(string dice)
@@ -26,7 +25,7 @@ namespace DnDCampaignManagerApp
             int result = 0;
             for (int i = 1; i <= numDice; i++)
             {
-                result += r.Next(1, dieSize);
+                result += r.Next(1, dieSize + 1);
             }
             return result.ToString();
         }

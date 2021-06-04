@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CampaignManagerData;
 using Newtonsoft.Json.Linq;
-using static DnDCampaignManagerApp.Exceptions;
+
 
 namespace DnDCampaignManagerApp
 {
@@ -81,11 +81,10 @@ namespace DnDCampaignManagerApp
         {
             using (var db = new DnDCampaignManagerContext())
             {
-                // delete references to this row in the provinces table
+                
                 var provinces = db.Provinces.Where(p => p.RandEncounterTableId == tableId).ToList();
                 provinces.ForEach(p => p.RandEncounterTableId = null);
                 
-                // delete this entry
                 var tableToDelete = db.RandomEncounters.Where(re => re.RandEncounterTableId == tableId).FirstOrDefault();
                 db.RandomEncounters.RemoveRange(tableToDelete);
                 db.SaveChanges();
