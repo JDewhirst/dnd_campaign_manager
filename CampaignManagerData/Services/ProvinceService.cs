@@ -42,5 +42,11 @@ namespace CampaignManagerData
         {
             return _context.TerrainDetails.Where(td => td.TerrainId == terrainId).FirstOrDefault().TerrainTravelSpeed.ToString();
         }
+
+        public void CreateProvince(Province p)
+        {
+            _context.Provinces.Add(p);
+            _context.SaveChanges();
+        }
     }
 }

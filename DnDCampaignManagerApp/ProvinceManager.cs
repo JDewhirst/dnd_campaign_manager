@@ -28,6 +28,19 @@ namespace DnDCampaignManagerApp
             SelectedProvince = (Province)selectedItem;
         }
 
+        public void CreateProvince(int coordinates, string provinceName, string terrainId, string obviousFeature = null, string hiddenFeature = null)
+        {
+            var newProvince = new Province()
+            {
+                Coordinates = coordinates,
+                ProvinceName = provinceName,
+                TerrainId = terrainId,
+                ObviousFeature = obviousFeature,
+                HiddenFeature = hiddenFeature
+            };
+            _service.CreateProvince(newProvince);
+        }
+
         public int GetNumberOfProvinces()
         {
             return _service.GetNumberOfProvinces();
