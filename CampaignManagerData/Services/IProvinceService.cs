@@ -14,7 +14,6 @@ namespace CampaignManagerData
         public Province GetProvinceByName(string provinceName);
         public void SaveProvinceChanges();
 
-        public string GetTravelSpeed(string provinceName);
         public void CreateProvince(Province p);
     }
 }

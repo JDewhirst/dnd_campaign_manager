@@ -12,6 +12,7 @@ namespace DnDCampaignManagerApp
         public Province SelectedProvince { get; set; }
         private IProvinceService _service;
         private RandomEncounterManager _randomEncounterManager = new RandomEncounterManager();
+        private TerrainManager _terrainManager = new TerrainManager();
         
         public ProvinceManager()
         {
@@ -64,7 +65,7 @@ namespace DnDCampaignManagerApp
         public string GetProvinceTravelSpeed(string provinceName)
         {
             SelectedProvince = _service.GetProvinceByName(provinceName);
-            return _service.GetTravelSpeed(SelectedProvince.TerrainId);
+            return _terrainManager.GetTerrainSpeed(SelectedProvince.TerrainId);
         }
 
         public bool UpdateObviousFeatureDescription(string provinceName, string featureText)
