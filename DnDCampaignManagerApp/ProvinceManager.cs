@@ -51,12 +51,7 @@ namespace DnDCampaignManagerApp
         public string GetProvinceTravelSpeed(string provinceName)
         {
             SelectedProvince = _service.GetProvinceByName(provinceName);
-            using (var db = new DnDCampaignManagerContext())
-            {
-                var provinceTravelSpeed = db.TerrainDetails.Where(td => td.TerrainId == SelectedProvince.TerrainId)
-                    .FirstOrDefault().TerrainTravelSpeed.ToString();
-                return provinceTravelSpeed;
-            }
+            return _service.GetTravelSpeed(SelectedProvince.TerrainId);
         }
 
         public bool UpdateObviousFeatureDescription(string provinceName, string featureText)
@@ -136,7 +131,6 @@ namespace DnDCampaignManagerApp
             SelectedProvince = _service.GetProvinceByName(provinceName);
             SelectedProvince.RandEncounterTableId = tableId;
             _service.SaveProvinceChanges();
-
         }
 
 

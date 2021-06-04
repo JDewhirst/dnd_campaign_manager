@@ -37,5 +37,10 @@ namespace CampaignManagerData
         {
             _context.SaveChanges();
         }
+
+        public string GetTravelSpeed(string terrainId)
+        {
+            return _context.TerrainDetails.Where(td => td.TerrainId == terrainId).FirstOrDefault().TerrainTravelSpeed.ToString();
+        }
     }
 }
